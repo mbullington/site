@@ -1,0 +1,46 @@
+// Many of these variables come from Bulma. Thank you!
+// bulma.io v0.5.0 | MIT License | github.com/jgthms/bulma
+
+// Colors
+
+$black:        hsl(0, 0%, 4%);
+$black-bis:    hsl(0, 0%, 7%);
+$black-ter:    hsl(0, 0%, 14%);
+
+$grey-darker:  hsl(0, 0%, 21%);
+$grey-dark:    hsl(0, 0%, 29%);
+$grey:         hsl(0, 0%, 48%);
+$grey-light:   hsl(0, 0%, 71%);
+$grey-lighter: hsl(0, 0%, 86%);
+
+$white-ter:    hsl(0, 0%, 96%);
+$white-bis:    hsl(0, 0%, 98%);
+$white:        hsl(0, 0%, 100%);
+
+$primary: rgb(147,191,182);
+$accent: rgb(111,36,128);
+
+$dji: rgb(73,83,55);
+$wolfram: rgb(235, 47, 42);
+$dglogik: rgb(0,189,255);
+
+$br: rgba(219, 219, 219, 0.5);
+
+// Typography
+
+$font-system: BlinkMacSystemFont, -apple-system, "Roboto", "Helvetica", sans-serif;
+
+$font-title: "Libre Baskerville", "Times New Roman", serif;
+$font-subtitle: $font-system;
+$font-text: "Work Sans", $font-system;
+$font-link: $font-system;
+
+$size-title: 4.5rem;
+
+$size-1: 3rem;
+$size-2: 2.5rem;
+$size-3: 2rem;
+$size-4: 1.5rem;
+$size-5: 1.25rem;
+$size-6: 1rem;
+$size-7: 0.75rem;
