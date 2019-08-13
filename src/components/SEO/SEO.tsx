@@ -1,7 +1,7 @@
 import * as React from "react"
 import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
-import useSiteTitle from "../useSiteTitle";
+
+import useSiteTitle from "../useSiteTitle"
 
 interface Props {
   title?: string
@@ -16,22 +16,21 @@ export default function SEO({
   lang = "en",
   meta = [],
 }: Props) {
-  const siteTitle = useSiteTitle();
+  const siteTitle = useSiteTitle()
 
-  const titleStr = title ? `${title} | ${siteTitle}` : siteTitle
-
-  const metaDescription = description
+  // Used in <title> html tag.
+  const formattedTitle = title ? `${title} | ${siteTitle}` : siteTitle
 
   return (
     <Helmet
       htmlAttributes={{
         lang,
       }}
-      title={titleStr}
+      title={formattedTitle}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: description,
         },
         {
           property: `og:title`,
@@ -39,7 +38,7 @@ export default function SEO({
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: description,
         },
         {
           property: `og:type`,
@@ -51,7 +50,7 @@ export default function SEO({
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: "mikebullingtn",
         },
         {
           name: `twitter:title`,
@@ -59,9 +58,10 @@ export default function SEO({
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: description,
         },
-      ].concat(meta)}
+        ...meta,
+      ]}
     />
   )
 }
