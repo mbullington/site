@@ -27,7 +27,7 @@ export default function Header() {
             <Emoji emoji="🇺🇸" />
             <span>PSU '21</span>
             <Emoji emoji="🎓" />
-            <span style={{ flex: 1 }} />
+            <code className={styles.code}>"part-time" | "remote" | "intern"</code>
           </InlineRow>
 
           <p className={styles.text}>

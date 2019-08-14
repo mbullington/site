@@ -58,18 +58,27 @@
   color: $white-bis;
 }
 
+.attrs {
+  @include text-style();
+
+  font-weight: bold;
+}
+
+.code {
+  padding: 4px;
+
+  border-radius: 2px;
+
+  font-family: $font-code;
+  font-size: 1rem;
+}
+
 .linkDJI {
   @include link-style($dji, ($size-3 * 0.15));
 
   font-weight: bold;
 
   color: $dji;
-}
-
-.attrs {
-  @include text-style();
-
-  font-weight: bold;
 }
 
 .bold {
