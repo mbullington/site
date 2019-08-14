@@ -8,23 +8,31 @@
 @mixin link-style($color, $size) {
   position: relative;
 
+  opacity: 0.8;
+  transition: opacity 300ms;
+
+  &:hover {
+    opacity: 1;
+  }
+
   &::after {
     content: '';
 
     position: absolute;
-
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
 
     border-bottom: $size solid $color;
-    transition: transform 300ms;
+    opacity: 0.8;
+    transition: transform 300ms, opacity 300ms;
 
     transform: translateY(($size * 0.5));
   }
 
   &:hover::after {
+    opacity: 1;
     transform: translateY(($size * 1.5));
   }
 }
