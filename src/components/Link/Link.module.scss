@@ -1,0 +1,20 @@
+@import "import_styles";
+
+.link {
+  @include text-style();
+  @include link-style($accent, ($size-6 * 0.15));
+  
+  transition: color 150ms ease;
+
+  font-weight: bold;
+
+  text-decoration: none;
+  color: $accent;
+}
+
+:global(.dark-mode) .link {
+  $color: lighten($accent, 30%);
+
+  color: $color;
+  @include link-style($color, ($size-6 * 0.15));
+}

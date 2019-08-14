@@ -1,26 +1,43 @@
 import * as React from "react"
+import classnames from "classnames"
 
 import Header from "../Header/Header"
-import useSiteTitle from "../useSiteTitle";
+
+import useLocalStorage from "../useLocalStorage"
 
 interface Props {
   children: React.ReactNode
 }
 
+export const DarkModeContext = React.createContext<[boolean, Function]>([
+  false,
+  (val: string) => {},
+])
+
 export default function Layout({ children }: Props) {
-  const siteTitle = useSiteTitle();
+  const [darkMode, setDarkMode] = useLocalStorage("darkMode", "false")
 
   return (
-    <>
-      <Header siteTitle={siteTitle} />
+    <DarkModeContext.Provider
+      value={[
+        darkMode === "true" ? true : false,
+        (val: string | boolean) => {
+          if (val === true || val === false) {
+            setDarkMode(val.toString())
+          }
+
+          if (val === "true" || val === "false") {
+            setDarkMode(val)
+          }
+        },
+      ]}
+    >
       <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
+        className={classnames({
+          "dark-mode": darkMode === "true",
+        })}
       >
+        <Header />
         <main>{children}</main>
         <footer>
           © {new Date().getFullYear()}, Built with
@@ -28,6 +45,6 @@ export default function Layout({ children }: Props) {
           <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>
-    </>
+    </DarkModeContext.Provider>
   )
 }

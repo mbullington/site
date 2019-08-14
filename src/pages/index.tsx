@@ -11,10 +11,6 @@ export default function Index() {
   return (
     <Layout>
       <SEO />
-      <div className="columns">
-        <div className="column"><Image /></div>
-        <div className="column"><Image /></div>
-      </div>
     </Layout>
   )
 }

@@ -1,38 +1,62 @@
-import * as React from "react"
+import * as React from "react";
+import classnames from "classnames";
 
-import { Link } from "gatsby"
+import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
+import InlineRow from "../InlineRow/InlineRow";
+import Link from "../Link/Link";
+import { Emoji, FAB } from "../Icon/Icon";
 
-interface Props {
-  siteTitle?: string
-}
+import styles from "./Header.module.scss";
 
-export default function Header({ siteTitle = "" }) {
+export default function Header() {
   return (
-    <header
-      style={{
-        background: `rebeccapurple`,
-        marginBottom: `1.45rem`,
-      }}
-    >
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `1.45rem 1.0875rem`,
-        }}
-      >
-        <h1 style={{ margin: 0 }}>
-          <Link
-            to="/"
-            style={{
-              color: `white`,
-              textDecoration: `none`,
-            }}
-          >
-            {siteTitle}
-          </Link>
-        </h1>
+    <div className={styles.root}>
+      <div className="columns">
+        <div className={classnames(styles.column, "column is-5 is-offset-one-third")}>
+          <DarkModeToggle className={styles.darkModeToggle} />
+
+          <p className={styles.title}>
+            Hello — I'm Michael. I work on web at{" "}
+            <a className={styles.linkDJI}>DJI</a>.
+          </p>
+
+          <InlineRow spacing="small" className={styles.attrs}>
+            <span>20 y/o</span>
+            <Emoji emoji="🇺🇸" />
+            <span>PSU '21</span>
+            <Emoji emoji="🎓" />
+            <span style={{ flex: 1 }} />
+          </InlineRow>
+
+          <p className={styles.text}>
+            I'm a software developer who's passionate about building user
+            interfaces. I build experiences for the web, mobile, and cloud. I
+            have deep knowledge of mapping technologies like <b>Mapbox</b>, and am
+            currently excited by <b>Flutter</b>.
+            <br />
+            <br />
+            I'm also a college student, and create projects for the open source
+            community.
+            <br />
+            <br />
+            <Link href="#scroll-work">SEE BELOW</Link>
+          </p>
+
+          <InlineRow spacing="small" className={styles.bold}>
+            <a href="https://www.linkedin.com/in/michael-bullington-617a67b8/">
+              <FAB fa="fa-linkedin" />
+            </a>
+            <a href="https://github.com/mbullington">
+              <FAB fa="fa-github" />
+            </a>
+            <a href="https://twitter.com/mikebullingtn">
+              <FAB fa="fa-twitter" />
+            </a>
+
+            <Link href="resume.pdf">Resume / CV</Link>
+          </InlineRow>
+        </div>
       </div>
-    </header>
-  )
+    </div>
+  );
 }

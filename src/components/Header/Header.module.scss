@@ -1,0 +1,85 @@
+@import "import_styles";
+
+.root {
+  transition: background-color 450ms ease, color 150ms ease;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 90vh;
+  margin-bottom: 10vh;
+  padding-top: 2rem;
+
+  background-color: $white-ter;
+
+  text-align: left;
+
+  @include mobile {
+    height: 100%;
+    padding: 12px;
+  }
+}
+
+:global(.dark-mode) .root {
+  background-color: $black-bis;
+  color: $grey-lighter;
+}
+
+// Make this align at flex-end so DarkModeToggle is on the right.
+.column {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.darkModeToggle {
+  position: absolute;
+  top: 5rem;
+
+  align-self: flex-end;
+  padding-right: 3rem;
+}
+
+.title {
+  transition: color 150ms ease;
+
+  margin: $size-6 0;
+
+  font-family: $font-title;
+  font-size: $size-1;
+  line-height: $size-title;
+  font-weight: bold;
+
+  color: $grey-dark;
+}
+
+:global(.dark-mode) .title {
+  color: $white-bis;
+}
+
+.linkDJI {
+  @include link-style($dji, ($size-3 * 0.15));
+
+  font-weight: bold;
+
+  color: $dji;
+}
+
+.attrs {
+  @include text-style();
+
+  font-weight: bold;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.text {
+  @include text-style();
+
+  & b {
+    color: $grey-dark;
+  }
+}
