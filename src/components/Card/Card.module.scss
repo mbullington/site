@@ -1,0 +1,52 @@
+@import "import_styles";
+
+.card {
+  transition: all 450ms ease;
+
+  min-height: 280px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
+
+  background-color: $white-ter;
+  border: 1px solid $white;
+  border-radius: 0.5rem;
+
+  @include text-style();
+}
+
+:global(.dark-mode) .card {
+  background-color: $black-bis;
+  border-color: $black-ter;
+
+  @include shadow-6dp();
+}
+
+.duration {
+  color: $grey;
+  font-size: $size-7;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: $size-5;
+  line-height: $size-4;
+  font-weight: bold;
+}
+
+:global(.dark-mode) .title {
+  color: $white-bis;
+}
+
+.location {
+  color: $grey;
+  font-size: $size-6;
+  line-height: $size-6;
+
+  // Override emoji size.
+  & :global img {
+    width: $size-6 !important;
+    height: $size-6 !important;
+  }
+}

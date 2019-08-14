@@ -1,4 +1,5 @@
-@import "bulma/sass/utilities/_all.sass";
+@import "import_styles";
+
 @import "bulma/sass/grid/columns.sass";
 
 * {
@@ -15,6 +16,32 @@ body {
 
 body {
   text-rendering: optimizeLegibility;
+}
+
+.layout--columns {
+  min-height: 100vh;
+}
+
+.two-cards {
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+
+  & > div {
+    flex: 1;
+  }
+
+  & > div:first-child {
+    margin-right: 2rem;
+  }
+
+  @include mobile {
+    flex-direction: column;
+
+    & > div:first-child {
+      padding-right: 0 !important;
+    }
+  }
 }
 
 // strange issue with Bulma
