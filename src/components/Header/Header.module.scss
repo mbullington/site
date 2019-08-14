@@ -83,3 +83,7 @@
     color: $grey-dark;
   }
 }
+
+:global(.dark-mode) .text b {
+  color: $white-bis;
+}
