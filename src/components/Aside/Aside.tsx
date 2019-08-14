@@ -8,7 +8,7 @@ import styles from "./Aside.module.scss";
 export default function Aside() {
   const [position, setPosition] = React.useState<"absolute" | "fixed">("absolute")
 
-  const { scrollY, scrollYProgress } = useViewportScroll();
+  const { scrollY } = useViewportScroll();
 
   const {height: windowHeight} = useWindowSize()
 
@@ -22,12 +22,8 @@ export default function Aside() {
   return (
     <motion.div
       className={styles.aside}
-      style={{ scale: 1, position }}
-      whileHover={{ scale: 1.1 }}
+      style={{ position }}
     >
-      <motion.div className={styles.bar}>
-        <motion.div className={styles.progress} style={{ scaleY: scrollYProgress }} />
-      </motion.div>
     </motion.div>
   );
 }

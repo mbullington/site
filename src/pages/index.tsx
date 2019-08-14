@@ -85,7 +85,7 @@ export default function Index() {
               </TwoCards>
               <TwoCards>
                 <Card title="calzone.dart" />
-                <Card title="Check out my other GitHub projects. I've been an open-source contributor since 2014. https://github.com/Polymer/polymer/issues/646" />
+                <Card>Check out my other GitHub projects. I've been an open-source contributor since 2014.</Card>
               </TwoCards>
             </Section>
           </div>

@@ -10,29 +10,3 @@
   padding-left: 4px;
   padding-right: 4px;
 }
-
-.bar {
-  width: 4px;
-  height: 100%;
-  max-height: 600px;
-
-  background-color: $grey-lighter;
-  border-radius: 2px;
-}
-
-:global(.dark-mode) .bar {
-  background-color: $grey-darker;
-}
-
-.progress {
-  transform-origin: 0 0;
-
-  height: 100%;
-
-  background-color: $accent;
-  border-radius: 2px;
-}
-
-:global(.dark-mode) .progress {
-  background-color: lighten($accent, 30%);
-}
