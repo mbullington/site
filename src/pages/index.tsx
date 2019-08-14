@@ -1,6 +1,7 @@
 import * as React from "react";
 import Helmet from "react-helmet";
 
+import Aside from "../components/Aside/Aside";
 import Layout from "../components/Layout/Layout";
 import Section from "../components/Section/Section";
 import Card from "../components/Card/Card";
@@ -31,56 +32,63 @@ export default function Index() {
       </Helmet>
       <SEO />
       {/* Actual content. */}
-      <div className="columns layout--columns">
-        <div className="column is-one-third"></div>
-        <div className="column is-6">
-          <Section title="Work Experience">
-            <Card
-              title="DJI Research LLC."
-              duration="May 2019 — Present"
-              location="Palo Alto, CA | Shenzhen, China | Remote"
-            />
+      <div style={{ position: "relative" }}>
+        <div className="columns layout--columns">
+          <div className="column is-one-third">
+            <Aside />
+          </div>
+          <div className="column is-6">
+            <Section title="Work Experience">
+              <Card
+                title="DJI Research LLC."
+                duration="May 2019 — Present"
+                location="Palo Alto, CA | Shenzhen, China | Remote"
+              />
 
-            <Card
-              title="Wolfram Research Inc."
-              duration="May 2018 — May 2019"
-              location="Champaign, IL | Remote"
-            />
-
-            <Card
-              title="Jackson Plumbing"
-              duration="April 2018 — May 2018"
-              location="Oakland, CA | Remote"
-            />
-          </Section>
-
-          <Section title="Personal Projects">
-            <Card title="Interval" duration="April 2019" />
-
-            <TwoCards>
-              <Card title="DISKS" duration="May 2017" />
+              <Card
+                title="Wolfram Research Inc."
+                duration="May 2018 — May 2019"
+                location="Champaign, IL | Remote"
+              />
 
               <Card
                 title="Jackson Plumbing"
-                duration="May 2018 — October 2018"
+                duration="April 2018 — May 2018"
+                location="Oakland, CA | Remote"
               />
-            </TwoCards>
-          </Section>
+            </Section>
 
-          <Section title="Education">
-            <Card title="Pennsylvania State University" duration="August 2017 — May 2021 (projected)" />
-          </Section>
+            <Section title="Personal Projects">
+              <Card title="Interval" duration="April 2019" />
 
-          <Section title="Open Source">
-            <TwoCards>
-              <Card title="yellowstone" />
-              <Card title="node_preamble.dart" />
-            </TwoCards>
-            <TwoCards>
-              <Card title="calzone.dart" />
-              <Card title="Check out my other GitHub projects. I've been an open-source contributor since 2014. https://github.com/Polymer/polymer/issues/646" />
-            </TwoCards>
-          </Section>
+              <TwoCards>
+                <Card title="DISKS" duration="May 2017" />
+
+                <Card
+                  title="Jackson Plumbing"
+                  duration="May 2018 — October 2018"
+                />
+              </TwoCards>
+            </Section>
+
+            <Section title="Education">
+              <Card
+                title="Pennsylvania State University"
+                duration="August 2017 — May 2021 (projected)"
+              />
+            </Section>
+
+            <Section title="Open Source">
+              <TwoCards>
+                <Card title="yellowstone" />
+                <Card title="node_preamble.dart" />
+              </TwoCards>
+              <TwoCards>
+                <Card title="calzone.dart" />
+                <Card title="Check out my other GitHub projects. I've been an open-source contributor since 2014. https://github.com/Polymer/polymer/issues/646" />
+              </TwoCards>
+            </Section>
+          </div>
         </div>
       </div>
     </Layout>
