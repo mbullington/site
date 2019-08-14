@@ -20,7 +20,7 @@ export default function DarkModeToggle({ className }: Props) {
   const [darkMode, setDarkMode] = React.useContext(DarkModeContext)
 
   return (
-    <div className={classnames(styles.root, className)} onClick={() => setDarkMode(!darkMode)}>
+    <div className={classnames(styles.darkModeToggle, className)} onClick={() => setDarkMode(!darkMode)}>
       <Icon>
         <div className={styles.moonOrSun} />
         <div className={styles.mask} />

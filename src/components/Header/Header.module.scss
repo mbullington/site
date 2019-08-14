@@ -1,6 +1,6 @@
 @import "import_styles";
 
-.root {
+.header {
   transition: background-color 450ms ease, color 150ms ease;
 
   display: flex;
@@ -22,7 +22,7 @@
   }
 }
 
-:global(.dark-mode) .root {
+:global(.dark-mode) .header {
   background-color: $black-bis;
   color: $grey-lighter;
 }

@@ -4,13 +4,14 @@ import classnames from "classnames";
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 import InlineRow from "../InlineRow/InlineRow";
 import Link from "../Link/Link";
-import { Emoji, FAB } from "../Icon/Icon";
+import Emoji from "../Emoji/Emoji";
+import { FAB } from "../Icon/Icon";
 
 import styles from "./Header.module.scss";
 
 export default function Header() {
   return (
-    <div className={styles.root}>
+    <div className={styles.header}>
       <div className="columns">
         <div className={classnames(styles.column, "column is-5 is-offset-one-third")}>
           <DarkModeToggle className={styles.darkModeToggle} />
