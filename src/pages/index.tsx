@@ -1,4 +1,5 @@
 import * as React from "react";
+import classnames from "classnames"
 import Helmet from "react-helmet";
 
 import Aside from "../components/Aside/Aside";
@@ -9,14 +10,15 @@ import Card from "../components/Card/Card";
 import Image from "../components/Image/Image";
 import SEO from "../components/SEO/SEO";
 
-import "./index.scss";
+import "../styles/global.scss";
+import styles from "./index.module.scss";
 
 interface TwoCardsProps {
   children: React.ReactNode;
 }
 
 export function TwoCards({ children }: TwoCardsProps) {
-  return <div className="two-cards">{children}</div>;
+  return <div className={styles.twoCards}>{children}</div>;
 }
 
 export default function Index() {
@@ -33,7 +35,7 @@ export default function Index() {
       <SEO />
       {/* Actual content. */}
       <div style={{ position: "relative" }}>
-        <div className="columns layout--columns">
+        <div className={classnames("columns", styles.columns)}>
           <div className="column is-one-third">
             <Aside />
           </div>
@@ -41,18 +43,21 @@ export default function Index() {
             <Section title="Work Experience">
               <Card
                 title="DJI Research LLC."
+                titleBackground={styles.dji}
                 duration="May 2019 — Present"
                 location="Palo Alto, CA | Shenzhen, China | Remote"
               />
 
               <Card
                 title="Wolfram Research Inc."
+                titleBackground={styles.wolfram}
                 duration="May 2018 — May 2019"
                 location="Champaign, IL | Remote"
               />
 
               <Card
-                title="Jackson Plumbing"
+                title="DGLogik Inc."
+                titleBackground={styles.dglogik}
                 duration="April 2018 — May 2018"
                 location="Oakland, CA | Remote"
               />

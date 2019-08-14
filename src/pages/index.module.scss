@@ -1,27 +1,17 @@
 @import "import_styles";
 
-@import "bulma/sass/grid/columns.sass";
-
-* {
-  box-sizing: border-box;
+// Export colors so we can use them in cards.
+:export {
+  dji: $dji;
+  wolfram: $wolfram;
+  dglogik: $dglogik;
 }
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-}
-
-body {
-  text-rendering: optimizeLegibility;
-}
-
-.layout--columns {
+.columns {
   min-height: 100vh;
 }
 
-.two-cards {
+.twoCards {
   display: flex;
   flex-direction: row;
   align-content: stretch;
@@ -41,9 +31,4 @@ body {
       padding-right: 0 !important;
     }
   }
-}
-
-// strange issue with Bulma
-.columns {
-  width: 100%;
 }
