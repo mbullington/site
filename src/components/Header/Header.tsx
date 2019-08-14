@@ -2,10 +2,11 @@ import * as React from "react";
 import classnames from "classnames";
 
 import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
+import Socials from "../Socials/Socials";
+
 import InlineRow from "../InlineRow/InlineRow";
 import Link from "../Link/Link";
 import Emoji from "../Emoji/Emoji";
-import { FAB } from "../Icon/Icon";
 
 import styles from "./Header.module.scss";
 
@@ -43,19 +44,7 @@ export default function Header() {
             <Link href="#scroll-work">SEE BELOW</Link>
           </p>
 
-          <InlineRow spacing="small" className={styles.bold}>
-            <a href="https://www.linkedin.com/in/michael-bullington-617a67b8/">
-              <FAB fa="fa-linkedin" />
-            </a>
-            <a href="https://github.com/mbullington">
-              <FAB fa="fa-github" />
-            </a>
-            <a href="https://twitter.com/mikebullingtn">
-              <FAB fa="fa-twitter" />
-            </a>
-
-            <Link href="resume.pdf">Resume / CV</Link>
-          </InlineRow>
+          <Socials />
         </div>
       </div>
     </div>

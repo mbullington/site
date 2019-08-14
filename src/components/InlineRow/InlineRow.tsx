@@ -7,12 +7,14 @@ interface Props {
   children: React.ReactNode
   spacing?: "small" | "normal"
   className?: string
+  style?: object
 }
 
 export default function InlineRow({
   children,
   spacing = "normal",
   className,
+  style,
 }: Props) {
   return (
     <div
@@ -24,6 +26,7 @@ export default function InlineRow({
         },
         className
       )}
+      style={style}
     >
       {children}
     </div>
