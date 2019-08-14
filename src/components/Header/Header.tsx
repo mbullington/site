@@ -12,7 +12,7 @@ import styles from "./Header.module.scss";
 
 export default function Header() {
   return (
-    <div className={styles.header}>
+    <header className={styles.header}>
       <div className="columns">
         <div className={classnames(styles.column, "column is-5 is-offset-one-third")}>
           <DarkModeToggle className={styles.darkModeToggle} />
@@ -34,7 +34,7 @@ export default function Header() {
             I'm a software developer who's passionate about building user
             interfaces. I build experiences for the web, mobile, and cloud. I
             have deep knowledge of mapping technologies like <b>Mapbox</b>, and am
-            currently excited by <b>Flutter</b>.
+            currently excited by <b>Flutter</b>. Fan of work travel. 😉
             <br />
             <br />
             I'm also a college student, and create projects for the open source
@@ -47,6 +47,6 @@ export default function Header() {
           <Socials />
         </div>
       </div>
-    </div>
+    </header>
   );
 }
