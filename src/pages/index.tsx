@@ -1,12 +1,13 @@
 import * as React from "react";
-import classnames from "classnames"
+import classnames from "classnames";
 import Helmet from "react-helmet";
 
 import Aside from "../components/Aside/Aside";
 import Layout from "../components/Layout/Layout";
 import Section from "../components/Section/Section";
 import Card from "../components/Card/Card";
-
+import Link from "../components/Link/Link";
+import { FAB } from "../components/Icon/Icon";
 import Image from "../components/Image/Image";
 import SEO from "../components/SEO/SEO";
 
@@ -85,12 +86,44 @@ export default function Index() {
 
             <Section title="Open Source">
               <TwoCards>
-                <Card title="yellowstone" />
-                <Card title="node_preamble.dart" />
+                <Card
+                  title="yellowstone"
+                  links={() => (
+                    <>
+                      <a href="https://github.com/mbullington/yellowstone">
+                        <FAB fa="fa-github" />
+                      </a>
+                      <Link href="https://github.com/mbullington/yellowstone/blob/master/examples/wowza.js">
+                        Example Code
+                      </Link>
+                    </>
+                  )}
+                >
+                  Pure TypeScript implementation of RTP/RTSP client protocols
+                  that allow for video streaming without external tools such as
+                  <code>ffmpeg</code>. Supports H264 transport and additional IP
+                  camera features.
+                </Card>
+                <Card
+                  title="node_preamble.dart"
+                  links={() => (
+                    <a href="https://github.com/mbullington/node_preamble.dart">
+                      <FAB fa="fa-github" />
+                    </a>
+                  )}
+                >
+                  Wrapper library that allows for Dart applications to run in
+                  Node.js. Small part of the <code>sass</code> npm package,
+                  other Google projects, and official tooling for the Khronos
+                  Group (glTF-Validator).
+                </Card>
               </TwoCards>
               <TwoCards>
                 <Card title="calzone.dart" />
-                <Card>Check out my other GitHub projects. I've been an open-source contributor since 2014.</Card>
+                <Card>
+                  Check out my other GitHub projects. I've been an open-source
+                  contributor since 2014.
+                </Card>
               </TwoCards>
             </Section>
           </div>

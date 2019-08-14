@@ -1,6 +1,7 @@
 @import "import_styles";
 
 .card {
+  position: relative;
   transition: all 450ms ease;
 
   min-height: 280px;
@@ -12,12 +13,15 @@
   border: 1px solid $white;
   border-radius: 0.5rem;
 
+  color: $black-bis;
+
   @include text-style();
 }
 
 :global(.dark-mode) .card {
   background-color: $black-bis;
   border-color: $black-ter;
+  color: $grey-light;
 
   @include shadow-6dp();
 }
@@ -39,7 +43,7 @@
 
     border-radius: 0.25rem;
 
-    color: $grey-lighter !important;
+    color: $white-ter !important;
   }
 }
 
@@ -57,4 +61,15 @@
     width: $size-6 !important;
     height: $size-6 !important;
   }
+}
+
+.divider {
+  height: 0.5rem;
+}
+
+.links {
+  position: absolute;
+  bottom: 0.75rem;
+
+  padding: 0.25rem;
 }

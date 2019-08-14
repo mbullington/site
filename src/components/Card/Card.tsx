@@ -1,6 +1,7 @@
 import * as React from "react";
 import classnames from "classnames";
 
+import InlineRow from "../InlineRow/InlineRow";
 import Emoji from "../Emoji/Emoji";
 
 import styles from "./Card.module.scss";
@@ -40,17 +41,18 @@ export default function Card({
           style={{ backgroundColor: titleBackground }}
         >
           {title}
+          <br />
         </span>
       )}
       {location && (
         <span className={styles.location}>
-          <br />
           <Emoji emoji="📌" /> {location}
-          <br />
           <br />
         </span>
       )}
+      <div className={styles.divider} />
       {children}
+      {links && <InlineRow className={styles.links} spacing="small">{links()}</InlineRow>}
     </div>
   );
 }
