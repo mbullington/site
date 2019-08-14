@@ -1,0 +1,11 @@
+@import "import_styles";
+
+.layout {
+  transition: background-color 450ms ease;
+
+  background-color: $white;
+}
+
+.layout:global(.dark-mode) {
+  background-color: $black;
+}

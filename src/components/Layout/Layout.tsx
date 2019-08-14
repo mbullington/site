@@ -6,6 +6,8 @@ import Footer from "../Footer/Footer";
 
 import useLocalStorage from "../useLocalStorage";
 
+import styles from "./Layout.module.scss";
+
 interface Props {
   children: React.ReactNode;
 }
@@ -29,8 +31,8 @@ export default function Layout({ children }: Props) {
     }
   };
 
-  const className = classnames({
-    "dark-mode": darkMode === "true",
+  const className = classnames(styles.layout, {
+    "dark-mode": darkModeParsed,
   });
 
   return (
