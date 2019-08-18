@@ -35,9 +35,7 @@ export default function Index() {
       {/* Actual content. */}
       <div style={{ position: "relative" }}>
         <div className={classnames("columns", styles.columns)}>
-          <div className="column is-one-third">
-            {/* TODO: Aside */}
-          </div>
+          <div className="column is-one-third">{/* TODO: Aside */}</div>
           <div className="column is-6">
             <Section title="Work Experience">
               <Card
@@ -79,7 +77,19 @@ export default function Index() {
               <Card
                 title="Pennsylvania State University"
                 duration="August 2017 — May 2021 (projected)"
-              />
+                location="State College, PA | prev Erie, PA"
+              >
+                Persuing a Bachelor's Degree in{" "}
+                <strong>Computer Science</strong>.
+                <br />
+                <br />
+                Active in:
+                <ul>
+                  <li>Schreyer Honors College</li>
+                  <li>Drumline (Behrend Drumlions)</li>
+                  <li>Behrend Energy Initiative</li>
+                </ul>
+              </Card>
             </Section>
 
             <Section title="Open Source">
@@ -88,7 +98,10 @@ export default function Index() {
                   title="yellowstone"
                   links={() => (
                     <>
-                      <a href="https://github.com/mbullington/yellowstone" target="_blank">
+                      <a
+                        href="https://github.com/mbullington/yellowstone"
+                        target="_blank"
+                      >
                         <FAB fa="fa-github" />
                       </a>
                       <Link href="https://github.com/mbullington/yellowstone/blob/master/examples/wowza.js">
@@ -105,7 +118,10 @@ export default function Index() {
                 <Card
                   title="node_preamble.dart"
                   links={() => (
-                    <a href="https://github.com/mbullington/node_preamble.dart" target="_blank">
+                    <a
+                      href="https://github.com/mbullington/node_preamble.dart"
+                      target="_blank"
+                    >
                       <FAB fa="fa-github" />
                     </a>
                   )}
@@ -122,7 +138,10 @@ export default function Index() {
                   duration="2015"
                   links={() => (
                     <>
-                      <a href="https://github.com/dglogik/calzone.dart" target="_blank">
+                      <a
+                        href="https://github.com/dglogik/calzone.dart"
+                        target="_blank"
+                      >
                         <FAB fa="fa-github" />
                       </a>
                       <Link href="https://github.com/dglogik/calzone.dart/wiki/Internal-Workings">
@@ -138,11 +157,20 @@ export default function Index() {
                   definitions.
                 </Card>
                 <Card>
-                  
-                    <div className={styles.hint}>
-                      Check out my <a href="https://github.com/mbullington" target="_blank">other GitHub projects</a>! I've been an open-source
-                      contributor <a href="https://github.com/Polymer/polymer/issues/646" target="_blank">since 2014</a>.
-                    </div>
+                  <div className={styles.hint}>
+                    Check out my{" "}
+                    <a href="https://github.com/mbullington" target="_blank">
+                      other GitHub projects
+                    </a>
+                    ! I've been an open-source contributor{" "}
+                    <a
+                      href="https://github.com/Polymer/polymer/issues/646"
+                      target="_blank"
+                    >
+                      since 2014
+                    </a>
+                    .
+                  </div>
                 </Card>
               </TwoCards>
             </Section>

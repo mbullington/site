@@ -4,11 +4,10 @@
   position: relative;
   transition: all 450ms ease;
 
-  min-height: 280px;
+  min-height: 260px;
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1rem 1.5rem;
-  padding-bottom: 3.5rem;
 
   background-color: $white-ter;
   border: 1px solid $white;
@@ -25,6 +24,10 @@
   color: $grey-light;
 
   @include shadow-6dp();
+}
+
+.withLinks {
+  padding-bottom: 4rem;
 }
 
 .duration {

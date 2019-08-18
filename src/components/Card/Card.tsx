@@ -26,7 +26,7 @@ export default function Card({
   links,
 }: Props) {
   return (
-    <div className={styles.card}>
+    <div className={classnames(styles.card, { [styles.withLinks]: !!links })}>
       {duration && (
         <span className={styles.duration}>
           {duration}
@@ -52,7 +52,11 @@ export default function Card({
       )}
       <div className={styles.divider} />
       {children}
-      {links && <InlineRow className={styles.links} spacing="small">{links()}</InlineRow>}
+      {links && (
+        <InlineRow className={styles.links} spacing="small">
+          {links()}
+        </InlineRow>
+      )}
     </div>
   );
 }
