@@ -8,5 +8,5 @@ interface Props {
 }
 
 export default function Link({ href, children }: Props) {
-  return <a className={styles.link} href={href}>{children}</a>
+  return <a className={styles.link} href={href} target="_blank">{children}</a>
 }

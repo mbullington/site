@@ -2,13 +2,11 @@ import * as React from "react";
 import classnames from "classnames";
 import Helmet from "react-helmet";
 
-import Aside from "../components/Aside/Aside";
 import Layout from "../components/Layout/Layout";
 import Section from "../components/Section/Section";
 import Card from "../components/Card/Card";
 import Link from "../components/Link/Link";
 import { FAB } from "../components/Icon/Icon";
-import Image from "../components/Image/Image";
 import SEO from "../components/SEO/SEO";
 
 import "../styles/global.scss";
@@ -38,7 +36,7 @@ export default function Index() {
       <div style={{ position: "relative" }}>
         <div className={classnames("columns", styles.columns)}>
           <div className="column is-one-third">
-            <Aside />
+            {/* TODO: Aside */}
           </div>
           <div className="column is-6">
             <Section title="Work Experience">
@@ -90,7 +88,7 @@ export default function Index() {
                   title="yellowstone"
                   links={() => (
                     <>
-                      <a href="https://github.com/mbullington/yellowstone">
+                      <a href="https://github.com/mbullington/yellowstone" target="_blank">
                         <FAB fa="fa-github" />
                       </a>
                       <Link href="https://github.com/mbullington/yellowstone/blob/master/examples/wowza.js">
@@ -100,14 +98,14 @@ export default function Index() {
                   )}
                 >
                   Pure TypeScript implementation of RTP/RTSP client protocols
-                  that allow for video streaming without external tools such as
+                  for video streaming without external tools such as
                   <code>ffmpeg</code>. Supports H264 transport and additional IP
                   camera features.
                 </Card>
                 <Card
                   title="node_preamble.dart"
                   links={() => (
-                    <a href="https://github.com/mbullington/node_preamble.dart">
+                    <a href="https://github.com/mbullington/node_preamble.dart" target="_blank">
                       <FAB fa="fa-github" />
                     </a>
                   )}
@@ -119,10 +117,32 @@ export default function Index() {
                 </Card>
               </TwoCards>
               <TwoCards>
-                <Card title="calzone.dart" />
+                <Card
+                  title="calzone.dart"
+                  duration="2015"
+                  links={() => (
+                    <>
+                      <a href="https://github.com/dglogik/calzone.dart" target="_blank">
+                        <FAB fa="fa-github" />
+                      </a>
+                      <Link href="https://github.com/dglogik/calzone.dart/wiki/Internal-Workings">
+                        Design Document
+                      </Link>
+                    </>
+                  )}
+                >
+                  Compiler that allows Dart libraries to be accessed from
+                  Node.js as regular libraries. Automatically compiles Dart code
+                  to JavaScript, mimicks Dart I/O using Node.js, and generates
+                  helpers between JS and Dart classes. Also generates TypeScript
+                  definitions.
+                </Card>
                 <Card>
-                  Check out my other GitHub projects. I've been an open-source
-                  contributor since 2014.
+                  
+                    <div className={styles.hint}>
+                      Check out my <a href="https://github.com/mbullington" target="_blank">other GitHub projects</a>! I've been an open-source
+                      contributor <a href="https://github.com/Polymer/polymer/issues/646" target="_blank">since 2014</a>.
+                    </div>
                 </Card>
               </TwoCards>
             </Section>

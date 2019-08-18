@@ -32,3 +32,24 @@
     }
   }
 }
+
+.hint {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+  margin-top: calc((280px - 1.5 * 5 * #{$size-5}) / 2);
+  margin-bottom: 2.5rem;
+
+  font-size: $size-6;
+
+  & a {
+    color: $accent;
+    text-decoration-color: $accent;
+  }
+}
+
+:global(.dark-mode) .hint a {
+  $color: lighten($accent, 30%);
+
+  color: $color;
+  text-decoration-color: $color;
+}
