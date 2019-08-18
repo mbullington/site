@@ -7,6 +7,8 @@ import Section from "../components/Section/Section";
 import Card from "../components/Card/Card";
 import Link from "../components/Link/Link";
 import { FAB } from "../components/Icon/Icon";
+import ImageCard from "../components/ImageCard/ImageCard";
+import { IntervalScreenshot } from "../components/Image/Image";
 import SEO from "../components/SEO/SEO";
 
 import "../styles/global.scss";
@@ -61,15 +63,58 @@ export default function Index() {
             </Section>
 
             <Section title="Personal Projects">
-              <Card title="Interval" duration="April 2019" />
-
               <TwoCards>
-                <Card title="DISKS" duration="May 2017" />
+                <Card
+                  title="Interval"
+                  duration="April 2019 — Present"
+                  links={() => (
+                    <>
+                      <Link href="https://play.google.com/store/apps/details?id=xyz.bullington.interval">
+                        Play Store
+                      </Link>
+                      <Link href="https://github.com/mbullington/interval-issues/milestone/1">
+                        Roadmap
+                      </Link>
+                    </>
+                  )}
+                />
+                <ImageCard>
+                  <IntervalScreenshot />
+                </ImageCard>
+              </TwoCards>
+              <TwoCards>
+                <Card
+                  title="DISKS"
+                  duration="May 2017"
+                  links={() => (
+                    <>
+                      <a
+                        href="https://github.com/mbullington/disks"
+                        target="_blank"
+                      >
+                        <FAB fa="fa-github" />
+                      </a>
+                      <Link href="https://disks.bullington.xyz/">Website</Link>
+                      <Link href="http://gamescrafters.berkeley.edu/games.php?game=dao">
+                        Dao (inspiration)
+                      </Link>
+                    </>
+                  )}
+                >
+                  Simple two-player puzzle game. Focuses on local multiplayer,
+                  and is inspired by other great puzzle games like Dao. Later
+                  updated to learn about PWAs.
+                </Card>
 
                 <Card
                   title="Jackson Plumbing"
                   duration="May 2018 — October 2018"
-                />
+                  location="Erie, PA"
+                >
+                  Built a form generator using <strong>Electron</strong> and{" "}
+                  <strong>React</strong> for a local utility company. The work
+                  also included a simple DOCX templating engine.
+                </Card>
               </TwoCards>
             </Section>
 
@@ -83,11 +128,12 @@ export default function Index() {
                 <strong>Computer Science</strong>.
                 <br />
                 <br />
-                Active in:
+                Activities:
                 <ul>
                   <li>Schreyer Honors College</li>
                   <li>Drumline (Behrend Drumlions)</li>
                   <li>Behrend Energy Initiative</li>
+                  <li>HackPSU Participant</li>
                 </ul>
               </Card>
             </Section>

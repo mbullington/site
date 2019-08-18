@@ -1,0 +1,23 @@
+@import "import_styles";
+
+$borderRadius: 0.5rem;
+
+.imageCard {
+  position: relative;
+  transition: all 200ms ease;
+
+  margin: 1rem 1.5rem;
+
+  border-radius: $borderRadius;
+
+  @include shadow-6dp();
+
+  & picture,
+  & img {
+    border-radius: $borderRadius;
+  }
+
+  &:hover {
+    @include shadow-8dp();
+  }
+}
