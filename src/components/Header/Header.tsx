@@ -46,7 +46,7 @@ export default function Header() {
           interfaces. I build experiences for the web, mobile, and cloud. I have
           deep knowledge of client-side <b>JavaScript</b> architecture, mapping
           technologies like <b>Mapbox</b>, and am currently excited by{" "}
-          <b>Flutter</b>. Fan of work travel. 😉
+          <b>Flutter</b>. Fan of work travel. 
           <br />
           <br />
           I'm also a college student, and create projects for the open source
