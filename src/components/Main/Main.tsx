@@ -18,10 +18,10 @@ export default function Main({ children }: Props) {
   });
 
   return (
-    <div className={styles.main}>
+    <main className={styles.main}>
       <div className={classnames("columns is-mobile", styles.columns)}>
         <div className={contentColumnClasses}>{children}</div>
       </div>
-    </div>
+    </main>
   );
 }
