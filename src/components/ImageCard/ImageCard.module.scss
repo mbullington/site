@@ -4,10 +4,13 @@ $borderRadius: 0.5rem;
 
 .imageCard {
   position: relative;
-  transition: all 200ms ease;
 
   margin: 1rem 0;
   margin-right: 3rem;
+}
+
+.inner {
+  transition: all 200ms ease;
 
   border-radius: $borderRadius;
 
