@@ -8,8 +8,12 @@ import Card from "../components/Card/Card";
 import Link from "../components/Link/Link";
 import { FAB } from "../components/Icon/Icon";
 import ImageCard from "../components/ImageCard/ImageCard";
-import { IntervalScreenshot } from "../components/Image/Image";
 import SEO from "../components/SEO/SEO";
+
+import IntervalScreenshot from "../components/Image/IntervalScreenshot"
+import DJILogo from "../components/Image/DJILogo"
+import WolframLogo from "../components/Image/WolframLogo"
+import DGLogikLogo from "../components/Image/DGLogikLogo"
 
 import "../styles/global.scss";
 import styles from "./index.module.scss";
@@ -45,6 +49,8 @@ export default function Index() {
                 titleBackground={styles.dji}
                 duration="May 2019 — Present"
                 location="Palo Alto, CA | Shenzhen, China | Remote"
+                logo={() => <DJILogo />}
+                logoBackground={styles.dji}
               />
 
               <Card
@@ -55,9 +61,13 @@ export default function Index() {
                 links={() => (
                   <>
                     <Link href="https://www.wolfram.com/cloud/">Website</Link>
-                    <Link href=" https://medium.com/wolfram-developers/modernizing-math-typesetting-with-svg-8d82ca606b9a">Technical Post</Link>
+                    <Link href=" https://medium.com/wolfram-developers/modernizing-math-typesetting-with-svg-8d82ca606b9a">
+                      Technical Post
+                    </Link>
                   </>
                 )}
+                logo={() => <WolframLogo />}
+                logoBackground={styles.wolfram}
               >
                 <ul>
                   <li>
@@ -66,8 +76,9 @@ export default function Index() {
                   </li>
                   <li>
                     Overhauled typesetting engine to improve aesthetic and
-                    better match TeX-like specifications. Wrote a technical
-                    post named <b>Modernizing Math Typesetting with SVG</b>, linked below.
+                    better match TeX-like specifications. Wrote a technical post
+                    named <b>Modernizing Math Typesetting with SVG</b>, linked
+                    below.
                   </li>
                   <li>
                     Created a library-agnostic mapping solution with default
@@ -91,6 +102,8 @@ export default function Index() {
                     </Link>
                   </>
                 )}
+                logo={() => <DGLogikLogo />}
+                logoBackground={styles.dglogik}
               >
                 <ul>
                   <li>

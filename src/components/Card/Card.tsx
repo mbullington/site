@@ -12,6 +12,8 @@ interface Props {
   duration?: string;
   title?: string;
   titleBackground?: string;
+  logo?: LinksCallback;
+  logoBackground?: string;
   location?: string;
   children?: React.ReactNode;
   links?: LinksCallback;
@@ -21,12 +23,27 @@ export default function Card({
   duration,
   title,
   titleBackground,
+  logo,
+  logoBackground,
   location,
   children,
   links,
 }: Props) {
+  const hasLogo = !!logo && !!logoBackground;
+  const hasBackground = !!titleBackground;
+  const hasLinks = !!links;
+
+  const cardClasses = classnames(styles.card, {
+    [styles.hasLogo]: hasLogo,
+    [styles.hasLinks]: hasLinks,
+  });
+
+  const titleClasses = classnames(styles.title, {
+    [styles.hasBackground]: hasBackground,
+  });
+
   return (
-    <div className={classnames(styles.card, { [styles.withLinks]: !!links })}>
+    <div className={cardClasses}>
       {duration && (
         <span className={styles.duration}>
           {duration}
@@ -35,12 +52,11 @@ export default function Card({
       )}
       {title && (
         <span
-          className={classnames(styles.title, {
-            [styles.hasBackground]: !!titleBackground,
-          })}
+          className={titleClasses}
           style={{ backgroundColor: titleBackground }}
         >
-          {title}
+          {hasBackground && `${title} `}
+          {!hasBackground && title}
           <br />
         </span>
       )}
@@ -56,6 +72,14 @@ export default function Card({
         <InlineRow className={styles.links} spacing="small">
           {links()}
         </InlineRow>
+      )}
+      {logo && (
+        <div
+          className={styles.logo}
+          style={{ backgroundColor: logoBackground }}
+        >
+          {logo()}
+        </div>
       )}
     </div>
   );
