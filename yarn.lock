@@ -1483,6 +1483,16 @@ amdefine@>=0.0.4:
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
   integrity sha1-SlKCrBZHKek2Gbz9OtFR+BfOkfU=
 
+animated-scrollto@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/animated-scrollto/-/animated-scrollto-1.1.0.tgz#735012da38bf97d337087f969d9bbe6a24c4acbc"
+  integrity sha1-c1AS2ji/l9M3CH+WnZu+aiTErLw=
+
+animation-frame@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/animation-frame/-/animation-frame-0.3.0.tgz#3bb3f446ba53da38bba345582f435be3ab8aee29"
+  integrity sha1-O7P0RrpT2ji7o0VYL0Nb46uK7ik=
+
 ansi-align@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ansi-align/-/ansi-align-2.0.0.tgz#c36aeccba563b89ceb556f3690f0b1d9e3547f7f"
@@ -10027,6 +10037,13 @@ scroll-behavior@^0.9.9:
   dependencies:
     dom-helpers "^3.2.1"
     invariant "^2.2.2"
+
+scrollto-with-animation@^4.5.2:
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/scrollto-with-animation/-/scrollto-with-animation-4.5.2.tgz#5a84b5d1a1ed943be54625542d773193d6c119de"
+  integrity sha1-WoS10aHtlDvlRiVULXcxk9bBGd4=
+  dependencies:
+    animation-frame "^0.3.0"
 
 scss-tokenizer@^0.2.3:
   version "0.2.3"
