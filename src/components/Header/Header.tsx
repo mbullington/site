@@ -9,12 +9,12 @@ import InlineRow from "../InlineRow/InlineRow";
 import Link from "../Link/Link";
 import Emoji from "../Emoji/Emoji";
 
-import useBreakpoints from "../useBreakpoints";
+import { BreakpointContext } from "../BreakpointProvider/BreakpointProvider"
 
 import styles from "./Header.module.scss";
 
 export default function Header() {
-  const breakpoint = useBreakpoints();
+  const breakpoint = React.useContext(BreakpointContext)
 
   const headerColumnClasses = classnames(styles.column, "column", {
     "is-5 is-offset-4": breakpoint === "desktop",

@@ -8,7 +8,7 @@ import classnames from "classnames"
 
 import Icon from "../Icon/Icon"
 
-import { DarkModeContext } from "../Layout/Layout"
+import { DarkModeContext } from "../DarkModeProvider/DarkModeProvider"
 
 import styles from "./DarkModeToggle.module.scss"
 

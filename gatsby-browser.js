@@ -4,4 +4,13 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-// You can delete this file if you're not using it
+import * as React from "react";
+
+import BreakpointProvider from "./src/components/BreakpointProvider/BreakpointProvider";
+import DarkModeProvider from "./src/components/DarkModeProvider/DarkModeProvider";
+
+export const wrapRootElement = ({ element }) => (
+  <DarkModeProvider>
+    <BreakpointProvider>{element}</BreakpointProvider>
+  </DarkModeProvider>
+);
