@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <p className={styles.text}>
         To work with me, please reach out at{" "}
-        <Link href="">hello@bullington.xyz</Link>.
+        <Link href="mailto:hello@bullington.xyz">hello@bullington.xyz</Link>.
       </p>
       <br />
       <Socials />
