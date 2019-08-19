@@ -77,7 +77,34 @@ export default function Index() {
                       </Link>
                     </>
                   )}
-                />
+                >
+                  We built Interval around what I would want in a time tracker,
+                  based on my experience as a remote developer. By emphasizing
+                  good design, Interval makes it super simple to go from 'I want
+                  to work' to 'work is in my timecard.' Features that help with
+                  this include a <strong>Timer</strong>,{" "}
+                  <strong>History</strong> tab to manually add entries (
+                  <i>shown right on desktop</i>), and{" "}
+                  <strong>CSV Export</strong>.
+                  <br />
+                  <br />
+                  Since launching on Product Hunt in April, Interval has gotten
+                  great feedback, and grown a tiny but dedicated userbase. As I
+                  have time I hope to add more features and grow more users.
+                  <br />
+                  <br />
+                  Technically, Interval is built almost entirely in{" "}
+                  <strong>Flutter</strong>, with the timer being implemented as
+                  a background service in <strong>Kotlin</strong>. The app's
+                  data is stored entirely on-device with an{" "}
+                  <strong>SQLite</strong> database.
+                  <br />
+                  <br />
+                  Designed by{" "}
+                  <Link href="https://pratti.design">
+                    Eduardo Pratti
+                  </Link> using <strong>Figma</strong>.
+                </Card>
                 <ImageCard>
                   <IntervalScreenshot />
                 </ImageCard>
