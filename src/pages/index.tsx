@@ -10,10 +10,10 @@ import { FAB } from "../components/Icon/Icon";
 import ImageCard from "../components/ImageCard/ImageCard";
 import SEO from "../components/SEO/SEO";
 
-import IntervalScreenshot from "../components/Image/IntervalScreenshot"
-import DJILogo from "../components/Image/DJILogo"
-import WolframLogo from "../components/Image/WolframLogo"
-import DGLogikLogo from "../components/Image/DGLogikLogo"
+import IntervalScreenshot from "../components/Image/IntervalScreenshot";
+import DJILogo from "../components/Image/DJILogo";
+import WolframLogo from "../components/Image/WolframLogo";
+import DGLogikLogo from "../components/Image/DGLogikLogo";
 
 import "../styles/global.scss";
 import styles from "./index.module.scss";
@@ -49,9 +49,37 @@ export default function Index() {
                 titleBackground={styles.dji}
                 duration="May 2019 — Present"
                 location="Palo Alto, CA | Shenzhen, China | Remote"
+                links={() => (
+                  <>
+                    <Link href="http://dji.com">Website</Link>
+                    <Link href="https://we.dji.com/detail_en.html#1318&Palo%20Alto">
+                      We’re hiring!
+                    </Link>
+                  </>
+                )}
                 logo={() => <DJILogo />}
                 logoBackground={styles.dji}
-              />
+              >
+                Front-End Engineering Intern
+                <br />
+                <ul>
+                  <li>
+                    Lead front-end web development for a special project using
+                    Vue 2 and Mapbox. The product requires close coordination
+                    with government regulations and DJI teams in Shenzhen. The
+                    product will have a focus on the North American market.
+                  </li>
+                  <li>
+                    Collaborated on a technical timeline for the project,
+                    detailing tasks to front-end engineers in both Palo Alto and
+                    Shenzhen.
+                  </li>
+                  <li>
+                    Helped to interview candidates for various web positions in
+                    the company.
+                  </li>
+                </ul>
+              </Card>
 
               <Card
                 title="Wolfram Research Inc."
@@ -69,6 +97,8 @@ export default function Index() {
                 logo={() => <WolframLogo />}
                 logoBackground={styles.wolfram}
               >
+                Intern, Core Engine R&D
+                <br />
                 <ul>
                   <li>
                     Developed user-facing features for Wolfram Cloud using web
@@ -105,6 +135,8 @@ export default function Index() {
                 logo={() => <DGLogikLogo />}
                 logoBackground={styles.dglogik}
               >
+                Part-Time Software Developer
+                <br />
                 <ul>
                   <li>
                     Developed bespoke IoT solutions for an array of Fortune 500
@@ -119,7 +151,7 @@ export default function Index() {
                   <li>
                     Architected multiple prototypes using D3, THREE.js, and
                     Xamarin. Integrated a new mapping solution based on Mapbox
-                    into DGLux 5, the company's main product.
+                    into DGLux 5, the company’s main product.
                   </li>
                   <li>
                     Transitioned a portion of the company’s internal processes
