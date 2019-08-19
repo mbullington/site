@@ -20,15 +20,13 @@
     flex: 1;
   }
 
-  & > div:first-child {
-    margin-right: 2rem;
-  }
-
   @include mobile {
     flex-direction: column;
+  }
 
+  @include tablet {
     & > div:first-child {
-      padding-right: 0 !important;
+      margin-right: 2rem;
     }
   }
 }

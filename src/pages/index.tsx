@@ -15,6 +15,8 @@ import DJILogo from "../components/Image/DJILogo";
 import WolframLogo from "../components/Image/WolframLogo";
 import DGLogikLogo from "../components/Image/DGLogikLogo";
 
+import useBreakpoints from "../components/useBreakpoints"
+
 import "../styles/global.scss";
 import styles from "./index.module.scss";
 
@@ -27,6 +29,13 @@ export function TwoCards({ children }: TwoCardsProps) {
 }
 
 export default function Index() {
+  const breakpoint = useBreakpoints()
+
+  const contentColumnClasses = classnames("column", {
+    "is-6 is-offset-4": breakpoint === "desktop",
+    "is-9 is-offset-2": breakpoint === "tablet",
+  })
+
   return (
     <Layout>
       {/* Stuff to inject into head. */}
@@ -40,9 +49,8 @@ export default function Index() {
       <SEO />
       {/* Actual content. */}
       <div style={{ position: "relative" }}>
-        <div className={classnames("columns", styles.columns)}>
-          <div className="column is-one-third">{/* TODO: Aside */}</div>
-          <div className="column is-6">
+        <div className={classnames("columns is-mobile", styles.columns)}>
+          <div className={contentColumnClasses}>
             <Section title="Work Experience">
               <Card
                 title="DJI Research LLC."

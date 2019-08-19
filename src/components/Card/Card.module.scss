@@ -21,10 +21,12 @@
     padding-bottom: 4rem;
   }
 
-  &.hasLogo {
-    $imageSize: 3rem;
-
-    padding-right: calc(4rem + #{$imageSize});
+  @include tablet {
+    &.hasLogo {
+      $imageSize: 3rem;
+  
+      padding-right: calc(4rem + #{$imageSize});
+    }
   }
 
   ul {
@@ -97,4 +99,8 @@
   padding: 1rem;
 
   border-radius: 50%;
+
+  @include mobile {
+    display: none;
+  }
 }

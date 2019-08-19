@@ -9,9 +9,18 @@ import InlineRow from "../InlineRow/InlineRow";
 import Link from "../Link/Link";
 import Emoji from "../Emoji/Emoji";
 
+import useBreakpoints from "../useBreakpoints";
+
 import styles from "./Header.module.scss";
 
 export default function Header() {
+  const breakpoint = useBreakpoints();
+
+  const headerColumnClasses = classnames(styles.column, "column", {
+    "is-5 is-offset-4": breakpoint === "desktop",
+    "is-8 is-offset-2": breakpoint === "tablet",
+  });
+
   const handleClick = () => {
     scrollToWithAnimation(
       document.documentElement,
@@ -22,18 +31,13 @@ export default function Header() {
     );
   };
 
-  const hasCompany = !!document.location.hash
-  const company = hasCompany ? document.location.hash.substr(1) + ' ' : ''
+  const hasCompany = !!document.location.hash;
+  const company = hasCompany ? document.location.hash.substr(1) + " " : "";
 
   return (
     <header className={styles.header}>
-      <div className="columns">
-        <div
-          className={classnames(
-            styles.column,
-            "column is-5 is-offset-one-third"
-          )}
-        >
+      <div className="columns is-mobile">
+        <div className={headerColumnClasses}>
           <DarkModeToggle className={styles.darkModeToggle} />
 
           <p className={styles.title}>
@@ -46,9 +50,6 @@ export default function Header() {
             <Emoji emoji="🇺🇸" />
             <span>PSU '21</span>
             <Emoji emoji="🎓" />
-            <code className={styles.code}>
-              "part-time" | "remote" | "intern"
-            </code>
           </InlineRow>
 
           <p className={styles.text}>
