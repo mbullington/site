@@ -80,8 +80,8 @@ export default function Index() {
                 >
                   We built Interval around what I would want in a time tracker,
                   based on my experience as a remote developer. By emphasizing
-                  good design, Interval makes it super simple to go from 'I want
-                  to work' to 'work is in my timecard.' Features that help with
+                  good design, Interval makes it super simple to go from ‘<i>I want
+                  to work</i>’ to ‘<i>work is in my timecard.</i>’ Features that help with
                   this include a <strong>Timer</strong>,{" "}
                   <strong>History</strong> tab to manually add entries (
                   <i>shown right on desktop</i>), and{" "}
@@ -95,7 +95,7 @@ export default function Index() {
                   <br />
                   Technically, Interval is built almost entirely in{" "}
                   <strong>Flutter</strong>, with the timer being implemented as
-                  a background service in <strong>Kotlin</strong>. The app's
+                  a background service in <strong>Kotlin</strong>. The app’s
                   data is stored entirely on-device with an{" "}
                   <strong>SQLite</strong> database.
                   <br />
@@ -151,7 +151,7 @@ export default function Index() {
                 duration="August 2017 — May 2021 (projected)"
                 location="State College, PA | prev Erie, PA"
               >
-                Persuing a Bachelor's Degree in{" "}
+                Persuing a Bachelor’s Degree in{" "}
                 <strong>Computer Science</strong>.
                 <br />
                 <br />
@@ -235,7 +235,7 @@ export default function Index() {
                     <a href="https://github.com/mbullington" target="_blank">
                       other GitHub projects
                     </a>
-                    ! I've been an open-source contributor{" "}
+                    ! I’ve been an open-source contributor{" "}
                     <a
                       href="https://github.com/Polymer/polymer/issues/646"
                       target="_blank"
