@@ -31,7 +31,7 @@ export default function Header() {
     );
   };
 
-  const hasCompany = !!document.location.hash;
+  const hasCompany = typeof window === 'object' && !!document.location.hash;
   const company = hasCompany ? document.location.hash.substr(1) + " " : "";
 
   return (
