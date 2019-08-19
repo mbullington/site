@@ -22,6 +22,9 @@ export default function Header() {
     );
   };
 
+  const hasCompany = !!document.location.hash
+  const company = hasCompany ? document.location.hash.substr(1) + ' ' : ''
+
   return (
     <header className={styles.header}>
       <div className="columns">
@@ -34,7 +37,7 @@ export default function Header() {
           <DarkModeToggle className={styles.darkModeToggle} />
 
           <p className={styles.title}>
-            Hello — I'm Michael. I work on web at{" "}
+            Hello {company}— I'm Michael. I work on web at{" "}
             <a className={styles.linkDJI}>DJI</a>.
           </p>
 
