@@ -6,11 +6,13 @@
 
 import * as React from "react";
 
-import BreakpointProvider from "./src/components/BreakpointProvider/BreakpointProvider";
-import DarkModeProvider from "./src/components/DarkModeProvider/DarkModeProvider";
+import { BreakpointContext } from "./src/components/BreakpointProvider/BreakpointProvider";
+import { DarkModeContext } from "./src/components/DarkModeProvider/DarkModeProvider";
 
 export const wrapRootElement = ({ element }) => (
-  <DarkModeProvider>
-    <BreakpointProvider>{element}</BreakpointProvider>
-  </DarkModeProvider>
+  <DarkModeContext.Provider value={[false, () => {}]}>
+    <BreakpointContext.Provider value="desktop">
+      {element}
+    </BreakpointContext.Provider>
+  </DarkModeContext.Provider>
 );

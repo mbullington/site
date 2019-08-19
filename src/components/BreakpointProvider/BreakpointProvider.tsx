@@ -20,13 +20,7 @@ export default function BreakpointProvider({ children }: Props) {
 
 // Modified from: https://usehooks.com/useWindowSize/
 function useBreakpoint(defaultValue: Breakpoint): Breakpoint {
-  const isClient = typeof window === "object";
-
   function getBreakpoint() {
-    if (!isClient) {
-      return defaultValue;
-    }
-
     const width = window.innerWidth;
 
     // Deviates slightly from Bulma to allow for better iPad support.
@@ -44,10 +38,6 @@ function useBreakpoint(defaultValue: Breakpoint): Breakpoint {
   const [breakpoint, setBreakpoint] = React.useState<Breakpoint>(getBreakpoint);
 
   React.useEffect(() => {
-    if (!isClient) {
-      return;
-    }
-
     function handleResize() {
       setBreakpoint(getBreakpoint());
     }
