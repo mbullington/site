@@ -6,7 +6,7 @@ import Layout from "../components/Layout/Layout";
 import Section from "../components/Section/Section";
 import Card from "../components/Card/Card";
 import Link from "../components/Link/Link";
-import { FAB } from "../components/Icon/Icon";
+import { FAS, FAB } from "../components/Icon/Icon";
 import ImageCard from "../components/ImageCard/ImageCard";
 import SEO from "../components/SEO/SEO";
 
@@ -51,7 +51,9 @@ export default function Index() {
                 location="Palo Alto, CA | Shenzhen, China | Remote"
                 links={() => (
                   <>
-                    <Link href="http://dji.com">Website</Link>
+                    <a href="http://dji.com" target="_blank">
+                      <FAS fa="fa-globe-asia" />
+                    </a>
                     <Link href="https://we.dji.com/detail_en.html#1318&Palo%20Alto">
                       We’re hiring!
                     </Link>
@@ -88,7 +90,9 @@ export default function Index() {
                 location="Champaign, IL | Remote"
                 links={() => (
                   <>
-                    <Link href="https://www.wolfram.com/cloud/">Website</Link>
+                    <a href="https://www.wolfram.com/cloud/" target="_blank">
+                      <FAS fa="fa-globe-americas" />
+                    </a>
                     <Link href=" https://medium.com/wolfram-developers/modernizing-math-typesetting-with-svg-8d82ca606b9a">
                       Technical Post
                     </Link>
@@ -125,7 +129,9 @@ export default function Index() {
                 location="Oakland, CA | Remote"
                 links={() => (
                   <>
-                    <Link href="http://dglogik.com/">Website</Link>
+                    <a href="http://dglogik.com" target="_blank">
+                      <FAS fa="fa-globe-americas" />
+                    </a>
                     <Link href="https://github.com/IOT-DSA">Protocol</Link>
                     <Link href="http://dglogik.com/our-platform/dglux">
                       DGLux 5
@@ -215,7 +221,9 @@ export default function Index() {
                       >
                         <FAB fa="fa-github" />
                       </a>
-                      <Link href="https://disks.bullington.xyz/">Website</Link>
+                      <a href="https://disks.bullington.xyz" target="_blank">
+                        <FAS fa="fa-globe-americas" />
+                      </a>
                       <Link href="http://gamescrafters.berkeley.edu/games.php?game=dao">
                         Dao (inspiration)
                       </Link>

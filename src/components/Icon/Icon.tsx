@@ -11,10 +11,14 @@ export default function Icon({ children }: Props) {
   return <div className={styles.icon}>{children}</div>
 }
 
-interface FABProps {
+interface FAProps {
   fa: string
 }
 
-export function FAB({ fa }: FABProps) {
+export function FAS({ fa }: FAProps) {
+  return <i className={classnames("fas", fa, styles.icon)} />
+}
+
+export function FAB({ fa }: FAProps) {
   return <i className={classnames("fab", fa, styles.icon)} />
 }
