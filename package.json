@@ -28,6 +28,7 @@
     "@types/react": "^16.9.1",
     "@types/react-dom": "^16.8.5",
     "@types/react-helmet": "^5.0.9",
+    "gh-pages": "^2.1.1",
     "prettier": "^1.18.2",
     "typescript": "^3.5.3"
   },
@@ -35,6 +36,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "start": "npm run develop",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "deploy": "gatsby build && gh-pages -d public -b master"
   }
 }
