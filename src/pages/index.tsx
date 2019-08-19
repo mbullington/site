@@ -52,14 +52,68 @@ export default function Index() {
                 titleBackground={styles.wolfram}
                 duration="May 2018 — May 2019"
                 location="Champaign, IL | Remote"
-              />
+                links={() => (
+                  <>
+                    <Link href="https://www.wolfram.com/cloud/">Website</Link>
+                    <Link href=" https://medium.com/wolfram-developers/modernizing-math-typesetting-with-svg-8d82ca606b9a">Technical Post</Link>
+                  </>
+                )}
+              >
+                <ul>
+                  <li>
+                    Developed user-facing features for Wolfram Cloud using web
+                    technologies such as React and Flow.
+                  </li>
+                  <li>
+                    Overhauled typesetting engine to improve aesthetic and
+                    better match TeX-like specifications. Wrote a technical
+                    post named <b>Modernizing Math Typesetting with SVG</b>, linked below.
+                  </li>
+                  <li>
+                    Created a library-agnostic mapping solution with default
+                    Leaflet driver, combining Wolfram’s rich computational
+                    intelligence with mapping on the web.
+                  </li>
+                </ul>
+              </Card>
 
               <Card
                 title="DGLogik Inc."
                 titleBackground={styles.dglogik}
                 duration="April 2018 — May 2018"
                 location="Oakland, CA | Remote"
-              />
+                links={() => (
+                  <>
+                    <Link href="http://dglogik.com/">Website</Link>
+                    <Link href="https://github.com/IOT-DSA">Protocol</Link>
+                    <Link href="http://dglogik.com/our-platform/dglux">
+                      DGLux 5
+                    </Link>
+                  </>
+                )}
+              >
+                <ul>
+                  <li>
+                    Developed bespoke IoT solutions for an array of Fortune 500
+                    companies such as Cisco, IBM, and Intel.
+                  </li>
+                  <li>
+                    Helped create a secure protocol for IoT devices, including a
+                    JavaScript and Dart SDK implementation. It is now an
+                    integral part of their stack and ships to thousands of
+                    customers worldwide.
+                  </li>
+                  <li>
+                    Architected multiple prototypes using D3, THREE.js, and
+                    Xamarin. Integrated a new mapping solution based on Mapbox
+                    into DGLux 5, the company's main product.
+                  </li>
+                  <li>
+                    Transitioned a portion of the company’s internal processes
+                    after acquisition by Acuity Brands Inc.
+                  </li>
+                </ul>
+              </Card>
             </Section>
 
             <Section title="Personal Projects">
@@ -80,17 +134,12 @@ export default function Index() {
                 >
                   We built Interval around what I would want in a time tracker,
                   based on my experience as a remote developer. By emphasizing
-                  good design, Interval makes it super simple to go from ‘<i>I want
-                  to work</i>’ to ‘<i>work is in my timecard.</i>’ Features that help with
-                  this include a <strong>Timer</strong>,{" "}
+                  good design, Interval makes it super simple to go from ‘
+                  <i>I want to work</i>’ to ‘<i>work is in my timecard.</i>’
+                  Features that help with this include a <strong>Timer</strong>,{" "}
                   <strong>History</strong> tab to manually add entries (
                   <i>shown right on desktop</i>), and{" "}
                   <strong>CSV Export</strong>.
-                  <br />
-                  <br />
-                  Since launching on Product Hunt in April, Interval has gotten
-                  great feedback, and grown a tiny but dedicated userbase. As I
-                  have time I hope to add more features and grow more users.
                   <br />
                   <br />
                   Technically, Interval is built almost entirely in{" "}
