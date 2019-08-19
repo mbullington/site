@@ -13,7 +13,7 @@ import styles from "./Header.module.scss";
 export default function Header() {
   const handleClick = () => {
     scrollToWithAnimation(
-      document.documentElement,
+      document.scrollingElement || document.documentElement,
       "scrollTop",
       window.innerHeight,
       1000,
