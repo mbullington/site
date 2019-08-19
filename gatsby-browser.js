@@ -6,11 +6,8 @@
 
 import * as React from "react";
 
-import BreakpointProvider from "./src/components/BreakpointProvider/BreakpointProvider";
 import DarkModeProvider from "./src/components/DarkModeProvider/DarkModeProvider";
 
 export const wrapRootElement = ({ element }) => (
-  <DarkModeProvider>
-    <BreakpointProvider>{element}</BreakpointProvider>
-  </DarkModeProvider>
+  <DarkModeProvider>{element}</DarkModeProvider>
 );

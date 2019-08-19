@@ -6,6 +6,6 @@
   background-color: $white;
 }
 
-.layout:global(.dark-mode) {
+:global(.dark-mode) .layout {
   background-color: $black;
 }

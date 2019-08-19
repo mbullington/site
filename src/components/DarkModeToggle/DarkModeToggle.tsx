@@ -8,7 +8,7 @@ import classnames from "classnames"
 
 import Icon from "../Icon/Icon"
 
-import { DarkModeContext } from "../DarkModeProvider/DarkModeProvider"
+import { DarkModeContext, FALLBACK_DARK_MODE } from "../DarkModeProvider/DarkModeProvider"
 
 import styles from "./DarkModeToggle.module.scss"
 
@@ -17,7 +17,7 @@ interface Props {
 }
 
 export default function DarkModeToggle({ className }: Props) {
-  const [darkMode, setDarkMode] = React.useContext(DarkModeContext)
+  const [darkMode, setDarkMode] = React.useContext(DarkModeContext) || FALLBACK_DARK_MODE
 
   return (
     <div className={classnames(styles.darkModeToggle, className)} onClick={() => setDarkMode(!darkMode)}>

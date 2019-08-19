@@ -1,21 +1,49 @@
 import * as React from "react";
+import classnames from "classnames";
 
 import useLocalStorage from "../useLocalStorage";
 
 type DarkMode = [boolean, Function];
 
-export const DarkModeContext = React.createContext<DarkMode>([false, () => {}]);
+export const FALLBACK_DARK_MODE: DarkMode = [false, () => {}];
+
+export const DarkModeContext = React.createContext<DarkMode>(
+  FALLBACK_DARK_MODE
+);
 
 interface Props {
   children: React.ReactNode;
 }
 
 export default function DarkModeProvider({ children }: Props) {
-  const [darkMode, setDarkMode] = useDarkMode()
+  const [darkMode, setDarkMode] = useDarkMode();
+  const [fakeDarkMode, setFakeDarkMode] = React.useState(false);
+
+  React.useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setFakeDarkMode(darkMode);
+    }, 0);
+
+    return () => clearTimeout(timeoutId);
+  }, []);
 
   return (
-    <DarkModeContext.Provider value={[darkMode, setDarkMode]}>
-      {children}
+    <DarkModeContext.Provider
+      value={[
+        fakeDarkMode,
+        (val: boolean) => {
+          setDarkMode(val);
+          setFakeDarkMode(val);
+        },
+      ]}
+    >
+      <div
+        className={classnames({
+          "dark-mode": fakeDarkMode,
+        })}
+      >
+        {children}
+      </div>
     </DarkModeContext.Provider>
   );
 }
