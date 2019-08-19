@@ -33,7 +33,7 @@ export default function Header() {
           <p className={styles.text}>
             I'm a software developer who's passionate about building user
             interfaces. I build experiences for the web, mobile, and cloud. I
-            have deep knowledge of mapping technologies like <b>Mapbox</b>, and am
+            have deep knowledge of client-side <b>JavaScript</b> architecture, mapping technologies like <b>Mapbox</b>, and am
             currently excited by <b>Flutter</b>. Fan of work travel. 😉
             <br />
             <br />
