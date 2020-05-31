@@ -1,13 +1,14 @@
 import * as React from "react";
-import Helmet from "react-helmet";
-import classnames from "classnames";
+
+import { faGlobeAsia, faGlobeAmericas } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import Layout from "../components/Layout/Layout";
 import Main from "../components/Main/Main";
 import Section from "../components/Section/Section";
 import Card from "../components/Card/Card";
 import Link from "../components/Link/Link";
-import { FAS, FAB } from "../components/Icon/Icon";
+import { FA } from "../components/Icon/Icon";
 import ImageCard from "../components/ImageCard/ImageCard";
 import SEO from "../components/SEO/SEO";
 
@@ -30,10 +31,6 @@ export function TwoCards({ children }: TwoCardsProps) {
 export default function Index() {
   return (
     <>
-      <Helmet>
-        {/* Font Awesome. */}
-        <script src="https://kit.fontawesome.com/abdf58a873.js" />
-      </Helmet>
       <SEO />
       {/* Actual content. */}
       <Layout>
@@ -47,7 +44,7 @@ export default function Index() {
               links={() => (
                 <>
                   <a href="http://dji.com" target="_blank">
-                    <FAS fa="fa-globe-asia" />
+                    <FA icon={faGlobeAsia} />
                   </a>
                   <Link href="https://we.dji.com/detail_en.html#1318&Palo%20Alto">
                     We’re hiring!
@@ -86,7 +83,7 @@ export default function Index() {
               links={() => (
                 <>
                   <a href="https://www.wolfram.com/cloud/" target="_blank">
-                    <FAS fa="fa-globe-americas" />
+                    <FA icon={faGlobeAmericas} />
                   </a>
                   <Link href=" https://medium.com/wolfram-developers/modernizing-math-typesetting-with-svg-8d82ca606b9a">
                     Technical Post
@@ -124,7 +121,7 @@ export default function Index() {
               links={() => (
                 <>
                   <a href="http://dglogik.com" target="_blank">
-                    <FAS fa="fa-globe-americas" />
+                    <FA icon={faGlobeAmericas} />
                   </a>
                   <Link href="https://github.com/IOT-DSA">Protocol</Link>
                   <Link href="http://dglogik.com/our-platform/dglux">
@@ -212,10 +209,10 @@ export default function Index() {
                       href="https://github.com/mbullington/disks"
                       target="_blank"
                     >
-                      <FAB fa="fa-github" />
+                      <FA icon={faGithub} />
                     </a>
                     <a href="https://disks.bullington.xyz" target="_blank">
-                      <FAS fa="fa-globe-americas" />
+                      <FA icon={faGlobeAmericas} />
                     </a>
                     <Link href="http://gamescrafters.berkeley.edu/games.php?game=dao">
                       Dao (inspiration)
@@ -269,7 +266,7 @@ export default function Index() {
                       href="https://github.com/mbullington/yellowstone"
                       target="_blank"
                     >
-                      <FAB fa="fa-github" />
+                      <FA icon={faGithub} />
                     </a>
                     <Link href="https://github.com/mbullington/yellowstone/blob/master/examples/wowza.js">
                       Example Code
@@ -289,7 +286,7 @@ export default function Index() {
                     href="https://github.com/mbullington/node_preamble.dart"
                     target="_blank"
                   >
-                    <FAB fa="fa-github" />
+                    <FA icon={faGithub} />
                   </a>
                 )}
               >
@@ -309,7 +306,7 @@ export default function Index() {
                       href="https://github.com/dglogik/calzone.dart"
                       target="_blank"
                     >
-                      <FAB fa="fa-github" />
+                      <FA icon={faGithub} />
                     </a>
                     <Link href="https://github.com/dglogik/calzone.dart/wiki/Internal-Workings">
                       Design Document

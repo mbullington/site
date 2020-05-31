@@ -1,24 +1,23 @@
-import * as React from "react"
-import classnames from "classnames"
+import * as React from "react";
+import classnames from "classnames";
 
-import styles from "./Icon.module.scss"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+
+import styles from "./Icon.module.scss";
 
 interface Props {
   children: React.ReactNode;
 }
 
 export default function Icon({ children }: Props) {
-  return <div className={styles.icon}>{children}</div>
+  return <div className={styles.icon}>{children}</div>;
 }
 
 interface FAProps {
-  fa: string
+  icon: IconProp;
 }
 
-export function FAS({ fa }: FAProps) {
-  return <i className={classnames("fas", fa, styles.icon)} />
-}
-
-export function FAB({ fa }: FAProps) {
-  return <i className={classnames("fab", fa, styles.icon)} />
+export function FA({ icon }: FAProps) {
+  return <FontAwesomeIcon className={styles.icon} icon={icon} />;
 }
