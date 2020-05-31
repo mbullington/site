@@ -29,10 +29,11 @@ $br: rgba(219, 219, 219, 0.5);
 // Typography
 
 $font-system: BlinkMacSystemFont, -apple-system, "Roboto", "Helvetica", sans-serif;
+$font-monospace: "CascadiaCode", San Francisco Mono, Monaco, monospace;
 
-$font-title: "Libre Baskerville", "Times New Roman", serif;
+$font-title: $font-monospace;
 $font-text: "Work Sans", $font-system;
-$font-code: "Fira Mono", monospace;
+$font-code: $font-monospace;
 
 $size-title: 4.5rem;
 

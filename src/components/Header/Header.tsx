@@ -35,7 +35,7 @@ export default function Header() {
         </p>
 
         <InlineRow spacing="small" className={styles.attrs}>
-          <span>20 y/o</span>
+          <span>21 y/o</span>
           <Emoji emoji="🇺🇸" />
           <span>PSU '21</span>
           <Emoji emoji="🎓" />
