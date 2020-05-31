@@ -39,7 +39,7 @@
   border-color: $black-ter;
   color: $grey-light;
 
-  @include shadow-6dp();
+  @include shadow-8dp();
 }
 
 .duration {

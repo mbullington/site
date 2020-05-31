@@ -6,6 +6,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
+import Header from "../components/Header/Header";
 import Hero from "../components/Hero/Hero";
 import Footer from "../components/Footer/Footer";
 import Main from "../components/Main/Main";
@@ -32,6 +33,7 @@ export function Layout({ children }: Props) {
   return (
     <div className={styles.layout}>
       <SEO />
+      <Header />
       <Hero />
       <div>{children}</div>
       <Footer />
@@ -51,7 +53,7 @@ export default function Index() {
   return (
     <Layout>
       <Main>
-        <Section title="Personal Projects">
+        <Section title="Projects" id="projects">
           <TwoCards>
             <Card
               title="Interval"
@@ -130,7 +132,7 @@ export default function Index() {
           </TwoCards>
         </Section>
 
-        <Section title="Work Experience">
+        <Section title="Work Experience" id="work-experience">
           <Card
             title="DJI Research LLC."
             titleBackground={styles.dji}
@@ -271,7 +273,7 @@ export default function Index() {
             </Card>
           </Section> */}
 
-        <Section title="Open Source">
+        <Section title="Open Source" id="open-source">
           <TwoCards>
             <Card
               title="yellowstone"

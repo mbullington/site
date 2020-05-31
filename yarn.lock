@@ -1962,6 +1962,31 @@
   dependencies:
     tslib "^1.11.2"
 
+"@react-hook/event@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@react-hook/event/-/event-1.1.0.tgz#c25034160ded4652d679b3994c96118057dc8d0b"
+  integrity sha512-jaVePoJXqQtQE4umQifLz+Uom4yC5GYTd5K/LrUVRnu0iMXtoIU5qiN4WIVwE6304P9VcBJTcMKtB/5iCC7brg==
+  dependencies:
+    "@react-hook/passive-layout-effect" "^1.0.3"
+
+"@react-hook/passive-layout-effect@^1.0.3":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@react-hook/passive-layout-effect/-/passive-layout-effect-1.1.0.tgz#05e232bf77ffb2efb0a5c3a51826fd4539b343a8"
+  integrity sha512-mdUSD+Quu4vB5bL0dN8CoJvfYdEtUf36ZqvHTt2Otdru6h0QgC7KbrCgOLdZ3tm/7N89ETHC5qJmXWFquXPN5g==
+
+"@react-hook/throttle@^2.1.2":
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/@react-hook/throttle/-/throttle-2.1.4.tgz#72e715f696e9a13fe2de8c762ba9e8c512716db6"
+  integrity sha512-ePn7Agti1hVUHYjONrK2thTfCMXmuzkZaJN6dBMrYb3zPbT83CaLB4gHJSAoWcffimgPyLhR/xLomvZrXCRedA==
+
+"@react-hook/window-scroll@^1.2.3":
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/@react-hook/window-scroll/-/window-scroll-1.2.3.tgz#0e418c1497aa403704d148f7dd556b55ca637fe3"
+  integrity sha512-KTjPkD5KRKTGPfk/gLYQJ575sPWN9+NFicAqjAiXDsXlRGHManppAlc+x5ohOc1jCjIsoco8rsByIIGPIXYS7A==
+  dependencies:
+    "@react-hook/event" "^1.1.0"
+    "@react-hook/throttle" "^2.1.2"
+
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
@@ -3641,6 +3666,13 @@ brorand@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/brorand/-/brorand-1.1.0.tgz#12c25efe40a45e3c323eb8675a0a0ce57b22371f"
   integrity sha1-EsJe/kCkXjwyPrhnWgoM5XsiNx8=
+
+browser-monads@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/browser-monads/-/browser-monads-1.0.0.tgz#c9a210ef3793cae7016440d9a9adfedd9a5ad7bd"
+  integrity sha1-yaIQ7zeTyucBZEDZqa3+3Zpa170=
+  dependencies:
+    nothing-mock "^1.0.0"
 
 browserify-aes@^1.0.0, browserify-aes@^1.0.4:
   version "1.2.0"
@@ -10480,6 +10512,11 @@ normalize-url@^4.1.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-4.5.0.tgz#453354087e6ca96957bd8f5baf753f5982142129"
   integrity sha512-2s47yzUxdexf1OhyRi4Em83iQk0aPvwTddtFz4hnSSw9dCEsLEGf6SwIO8ss/19S9iBb5sJaOuTvTGDeZI00BQ==
+
+nothing-mock@^1.0.0:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/nothing-mock/-/nothing-mock-1.0.2.tgz#e269ce26919e9b13c7ad0178348ab2b060186879"
+  integrity sha512-7/Ss8rzSY78UX0cbPB8Qj7X6IHV+QO7T0Rq2nYbpd7HymBCE0HIWSjoTjqbSVV8JSuuD50oVObwZDfvnwOT/NQ==
 
 npm-conf@^1.1.0:
   version "1.1.3"

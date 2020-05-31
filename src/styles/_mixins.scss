@@ -5,15 +5,19 @@
   line-height: $size-4;
 }
 
-@mixin link-style($color, $size) {
+@mixin link-plain-style() {
   position: relative;
 
   opacity: 0.8;
-  transition: opacity 300ms;
+  transition: color 150ms ease, opacity 300ms;
 
   &:hover {
     opacity: 1;
   }
+}
+
+@mixin link-style($color, $size) {
+  @include link-plain-style();
 
   &::after {
     content: '';

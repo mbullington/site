@@ -15,7 +15,7 @@ export default function Hero() {
     scrollToWithAnimation(
       document.scrollingElement || document.documentElement,
       "scrollTop",
-      window.innerHeight,
+      window.innerHeight * 0.9,
       1000,
       "easeInOutCirc"
     );
@@ -25,10 +25,8 @@ export default function Hero() {
   const company = hasCompany ? document.location.hash.substr(1) + " " : "";
 
   return (
-    <header className={styles.header}>
+    <div className={styles.hero}>
       <div className={styles.position}>
-        <DarkModeToggle className={styles.darkModeToggle} />
-
         <p className={styles.title}>
           Hello {company}— I'm Michael. I work on web at{" "}
           <a className={styles.linkDJI}>DJI</a>.
@@ -58,6 +56,6 @@ export default function Hero() {
 
         <Socials />
       </div>
-    </header>
+    </div>
   );
 }

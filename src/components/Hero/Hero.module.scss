@@ -1,6 +1,6 @@
 @import "import_styles";
 
-.header {
+.hero {
   transition: background-color 450ms ease, color 150ms ease;
 
   width: 100%;
@@ -17,6 +17,11 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+}
+
+:global(.dark-mode) .hero {
+  background-color: $black-bis;
+  color: $grey-lighter;
 }
 
 .position {
@@ -36,23 +41,10 @@
   }
 }
 
-:global(.dark-mode) .header {
-  background-color: $black-bis;
-  color: $grey-lighter;
-}
-
 // Make this align at flex-end so DarkModeToggle is on the right.
 .column {
   display: flex !important;
   flex-direction: column;
-}
-
-.darkModeToggle {
-  position: absolute;
-  top: 5rem;
-
-  align-self: flex-end;
-  padding-right: 3rem;
 }
 
 .title {

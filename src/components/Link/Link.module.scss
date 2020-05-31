@@ -2,21 +2,42 @@
 
 .link {
   @include text-style();
-  @include link-style($accent, ($size-6 * 0.15));
-  
-  transition: color 150ms ease;
 
-  margin-bottom: 0.375rem;
+  transition: color 150ms ease;
 
   font-weight: bold;
 
   text-decoration: none;
   color: $accent;
+
+  &:not(.plain) {
+    @include link-style($accent, ($size-6 * 0.15));
+
+    margin-bottom: 0.375rem;
+  }
+
+  &:not(.disabled) {
+    cursor: pointer;
+  }
 }
 
 :global(.dark-mode) .link {
   $color: lighten($accent, 30%);
 
   color: $color;
-  @include link-style($color, ($size-6 * 0.15));
+
+  &:not(.plain) {
+    @include link-style($color, ($size-6 * 0.15));
+  }
+}
+
+.plain {
+  @include link-plain-style();
+}
+
+.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+
+  color: $grey-light;
 }
