@@ -25,11 +25,16 @@
 .title {
   transition: color 150ms ease;
   cursor: pointer;
+  pointer-events: auto;
 
   font-size: $size-6;
   font-weight: bold;
   font-family: $font-title;
   color: $grey-dark;
+}
+
+:global(.dark-mode) .title {
+  color: $grey-lighter;
 }
 
 .nav {
@@ -60,10 +65,6 @@
   color: $grey-light;
 
   @include shadow-6dp();
-}
-
-:global(.dark-mode) .title {
-  color: $grey-dark;
 }
 
 .expanded {

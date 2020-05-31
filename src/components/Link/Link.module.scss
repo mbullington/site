@@ -21,7 +21,7 @@
   }
 }
 
-:global(.dark-mode) .link {
+:global(.dark-mode) .link:not(.disabled) {
   $color: lighten($accent, 30%);
 
   color: $color;
