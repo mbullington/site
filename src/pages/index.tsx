@@ -1,9 +1,13 @@
 import * as React from "react";
 
-import { faGlobeAsia, faGlobeAmericas } from "@fortawesome/free-solid-svg-icons";
+import {
+  faGlobeAsia,
+  faGlobeAmericas,
+} from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
-import Layout from "../components/Layout/Layout";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 import Main from "../components/Main/Main";
 import Section from "../components/Section/Section";
 import Card from "../components/Card/Card";
@@ -20,6 +24,20 @@ import DGLogikLogo from "../components/Image/DGLogikLogo";
 import "../styles/global.scss";
 import styles from "./index.module.scss";
 
+interface Props {
+  children: React.ReactNode;
+}
+
+export function Layout({ children }: Props) {
+  return (
+    <div className={styles.layout}>
+      <Header />
+      <div>{children}</div>
+      <Footer />
+    </div>
+  );
+}
+
 interface TwoCardsProps {
   children: React.ReactNode;
 }
@@ -35,6 +53,85 @@ export default function Index() {
       {/* Actual content. */}
       <Layout>
         <Main>
+          <Section title="Personal Projects">
+            <TwoCards>
+              <Card
+                title="Interval"
+                duration="April 2019 — Present"
+                links={() => (
+                  <>
+                    <Link href="https://play.google.com/store/apps/details?id=xyz.bullington.interval">
+                      Play Store
+                    </Link>
+                    <Link href="https://github.com/mbullington/interval-issues/milestone/1">
+                      Roadmap
+                    </Link>
+                  </>
+                )}
+              >
+                We built Interval around what I would want in a time tracker,
+                based on my experience as a remote developer. By emphasizing
+                good design, Interval makes it super simple to go from ‘
+                <i>I want to work</i>’ to ‘<i>work is in my timecard.</i>’
+                Features that help with this include a <strong>Timer</strong>,{" "}
+                <strong>History</strong> tab to manually add entries (
+                <i>shown right on desktop</i>), and <strong>CSV Export</strong>.
+                <br />
+                <br />
+                Technically, Interval is built almost entirely in{" "}
+                <strong>Flutter</strong>, with the timer being implemented as a
+                background service in <strong>Kotlin</strong>. The app’s data is
+                stored entirely on-device with an <strong>SQLite</strong>{" "}
+                database.
+                <br />
+                <br />
+                Designed by{" "}
+                <Link href="https://pratti.design">
+                  Eduardo Pratti
+                </Link> using <strong>Figma</strong>.
+              </Card>
+              <ImageCard>
+                <IntervalScreenshot />
+              </ImageCard>
+            </TwoCards>
+            <TwoCards>
+              <Card
+                title="DISKS"
+                duration="May 2017"
+                links={() => (
+                  <>
+                    <a
+                      href="https://github.com/mbullington/disks"
+                      target="_blank"
+                    >
+                      <FA icon={faGithub} />
+                    </a>
+                    <a href="https://disks.bullington.xyz" target="_blank">
+                      <FA icon={faGlobeAmericas} />
+                    </a>
+                    <Link href="http://gamescrafters.berkeley.edu/games.php?game=dao">
+                      Dao (inspiration)
+                    </Link>
+                  </>
+                )}
+              >
+                Simple two-player puzzle game. Focuses on local multiplayer, and
+                is inspired by other great puzzle games like Dao. Later updated
+                to learn about PWAs.
+              </Card>
+
+              <Card
+                title="Jackson Plumbing"
+                duration="May 2018 — October 2018"
+                location="Erie, PA"
+              >
+                Built a form generator using <strong>Electron</strong> and{" "}
+                <strong>React</strong> for a local utility company. The work
+                also included a simple DOCX templating engine.
+              </Card>
+            </TwoCards>
+          </Section>
+
           <Section title="Work Experience">
             <Card
               title="DJI Research LLC."
@@ -158,86 +255,7 @@ export default function Index() {
             </Card>
           </Section>
 
-          <Section title="Personal Projects">
-            <TwoCards>
-              <Card
-                title="Interval"
-                duration="April 2019 — Present"
-                links={() => (
-                  <>
-                    <Link href="https://play.google.com/store/apps/details?id=xyz.bullington.interval">
-                      Play Store
-                    </Link>
-                    <Link href="https://github.com/mbullington/interval-issues/milestone/1">
-                      Roadmap
-                    </Link>
-                  </>
-                )}
-              >
-                We built Interval around what I would want in a time tracker,
-                based on my experience as a remote developer. By emphasizing
-                good design, Interval makes it super simple to go from ‘
-                <i>I want to work</i>’ to ‘<i>work is in my timecard.</i>’
-                Features that help with this include a <strong>Timer</strong>,{" "}
-                <strong>History</strong> tab to manually add entries (
-                <i>shown right on desktop</i>), and <strong>CSV Export</strong>.
-                <br />
-                <br />
-                Technically, Interval is built almost entirely in{" "}
-                <strong>Flutter</strong>, with the timer being implemented as a
-                background service in <strong>Kotlin</strong>. The app’s data is
-                stored entirely on-device with an <strong>SQLite</strong>{" "}
-                database.
-                <br />
-                <br />
-                Designed by{" "}
-                <Link href="https://pratti.design">
-                  Eduardo Pratti
-                </Link> using <strong>Figma</strong>.
-              </Card>
-              <ImageCard>
-                <IntervalScreenshot />
-              </ImageCard>
-            </TwoCards>
-            <TwoCards>
-              <Card
-                title="DISKS"
-                duration="May 2017"
-                links={() => (
-                  <>
-                    <a
-                      href="https://github.com/mbullington/disks"
-                      target="_blank"
-                    >
-                      <FA icon={faGithub} />
-                    </a>
-                    <a href="https://disks.bullington.xyz" target="_blank">
-                      <FA icon={faGlobeAmericas} />
-                    </a>
-                    <Link href="http://gamescrafters.berkeley.edu/games.php?game=dao">
-                      Dao (inspiration)
-                    </Link>
-                  </>
-                )}
-              >
-                Simple two-player puzzle game. Focuses on local multiplayer, and
-                is inspired by other great puzzle games like Dao. Later updated
-                to learn about PWAs.
-              </Card>
-
-              <Card
-                title="Jackson Plumbing"
-                duration="May 2018 — October 2018"
-                location="Erie, PA"
-              >
-                Built a form generator using <strong>Electron</strong> and{" "}
-                <strong>React</strong> for a local utility company. The work
-                also included a simple DOCX templating engine.
-              </Card>
-            </TwoCards>
-          </Section>
-
-          <Section title="Education">
+          {/* <Section title="Education">
             <Card
               title="Pennsylvania State University"
               duration="August 2017 — May 2021 (projected)"
@@ -254,7 +272,7 @@ export default function Index() {
                 <li>HackPSU Participant</li>
               </ul>
             </Card>
-          </Section>
+          </Section> */}
 
           <Section title="Open Source">
             <TwoCards>

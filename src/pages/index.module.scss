@@ -7,6 +7,16 @@
   dglogik: $dglogik;
 }
 
+.layout {
+  transition: background-color 450ms ease;
+
+  background-color: $white;
+}
+
+:global(.dark-mode) .layout {
+  background-color: $black;
+}
+
 .twoCards {
   display: flex;
   flex-direction: row;
