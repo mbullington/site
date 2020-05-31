@@ -8,9 +8,9 @@ import InlineRow from "../InlineRow/InlineRow";
 import Link from "../Link/Link";
 import Emoji from "../Emoji/Emoji";
 
-import styles from "./Header.module.scss";
+import styles from "./Hero.module.scss";
 
-export default function Header() {
+export default function Hero() {
   const handleClick = () => {
     scrollToWithAnimation(
       document.scrollingElement || document.documentElement,
