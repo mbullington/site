@@ -1,5 +1,5 @@
 import * as React from "react"
-import classnames from "classnames"
+import cx from "clsx"
 
 import styles from "./InlineRow.module.scss"
 
@@ -18,7 +18,7 @@ export default function InlineRow({
 }: Props) {
   return (
     <div
-      className={classnames(
+      className={cx(
         styles.row,
         {
           [styles.spacingSmall]: spacing === "small",

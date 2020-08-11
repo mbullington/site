@@ -1,7 +1,6 @@
 import * as React from "react";
 import scrollToWithAnimation from "scrollto-with-animation";
 
-import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 import Socials from "../Socials/Socials";
 
 import InlineRow from "../InlineRow/InlineRow";
@@ -41,17 +40,19 @@ export default function Hero() {
 
         <p className={styles.text}>
           I'm a software developer who's passionate about building user
-          interfaces. I build experiences for the web, mobile, and cloud. I have
-          deep knowledge of client-side <b>JavaScript</b> architecture, mapping
-          technologies like <b>Mapbox</b>, and am currently excited by{" "}
-          <b>Flutter</b>. Fan of work travel... but currently quarantining!
-          <br />
-          <br />
-          I'm also a college student, and create projects for the open source
+          interfaces. I build experiences for the web, mobile, and cloud. I'm
+          also a college student, and create projects for the open source
           community.
           <br />
+          <br />I have deep knowledge of client-side <b>JavaScript</b>{" "}
+          architecture, mapping technologies like <b>Mapbox</b>, and am
+          currently excited by <b>Flutter</b>. Fan of travel, but currently
+          quarantining!
           <br />
-          <Link onClick={handleClick}>SEE BELOW</Link>
+          <span className={styles.seeBelow}>
+            <br />
+            <Link onClick={handleClick}>SEE BELOW</Link>
+          </span>
         </p>
 
         <Socials />

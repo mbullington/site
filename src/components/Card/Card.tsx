@@ -1,5 +1,5 @@
 import * as React from "react";
-import classnames from "classnames";
+import cx from "clsx";
 
 import InlineRow from "../InlineRow/InlineRow";
 import Emoji from "../Emoji/Emoji";
@@ -33,12 +33,12 @@ export default function Card({
   const hasBackground = !!titleBackground;
   const hasLinks = !!links;
 
-  const cardClasses = classnames(styles.card, {
+  const cardClasses = cx(styles.card, {
     [styles.hasLogo]: hasLogo,
     [styles.hasLinks]: hasLinks,
   });
 
-  const titleClasses = classnames(styles.title, {
+  const titleClasses = cx(styles.title, {
     [styles.hasBackground]: hasBackground,
   });
 

@@ -3,17 +3,22 @@
 .hero {
   transition: background-color 450ms ease, color 150ms ease;
 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   width: 100%;
   min-height: 90vh;
   margin-bottom: 10vh;
-  padding-top: 9rem;
-  padding-bottom: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 
   background-color: $white-ter;
 
   text-align: left;
 
   @include mobile {
+    // Extra padding for header.
+    padding-top: 8rem;
     padding-left: 1rem;
     padding-right: 1rem;
   }
@@ -99,4 +104,10 @@
 
 :global(.dark-mode) .text b {
   color: $white-bis;
+}
+
+.seeBelow {
+  @include desktop {
+    display: none;
+  }
 }

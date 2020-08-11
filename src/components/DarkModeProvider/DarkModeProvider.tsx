@@ -1,5 +1,5 @@
 import * as React from "react";
-import classnames from "classnames";
+import cx from "clsx";
 
 import useLocalStorage from "../useLocalStorage";
 
@@ -38,7 +38,7 @@ export default function DarkModeProvider({ children }: Props) {
       ]}
     >
       <div
-        className={classnames({
+        className={cx({
           "dark-mode": fakeDarkMode,
         })}
       >

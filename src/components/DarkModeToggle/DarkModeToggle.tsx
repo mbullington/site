@@ -4,7 +4,7 @@
 // https://github.com/narative/gatsby-theme-novela/blob/master/%40narative/gatsby-theme-novela/src/components/Navigation/Navigation.Header.tsx#L276
 
 import * as React from "react";
-import classnames from "classnames";
+import cx from "clsx";
 import useScrollPosition from "@react-hook/window-scroll";
 
 import Icon from "../Icon/Icon";
@@ -48,7 +48,7 @@ export default function DarkModeToggle({ className }: Props) {
 
   return (
     <div
-      className={classnames(styles.darkModeToggle, className)}
+      className={cx(styles.darkModeToggle, className)}
       onClick={() => setDarkMode(!darkMode)}
       style={{ opacity, pointerEvents }}
     >

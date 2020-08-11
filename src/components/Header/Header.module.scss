@@ -20,6 +20,10 @@
     padding-left: 1rem;
     padding-right: 1rem;
   }
+
+  @include tablet-only {
+    position: absolute;
+  }
 }
 
 .title {
@@ -38,7 +42,7 @@
 }
 
 .nav {
-  transition: all 450ms ease;
+  transition: all 450ms ease, transform 50ms ease;
 
   position: absolute;
   left: 50%;

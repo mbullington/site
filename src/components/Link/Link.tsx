@@ -1,5 +1,5 @@
 import * as React from "react"
-import classnames from "classnames";
+import cx from "clsx";
 
 import styles from "./Link.module.scss";
 
@@ -12,7 +12,7 @@ interface Props {
 }
 
 export default function Link({ href, onClick, children, plain, disabled }: Props) {
-  return <a className={classnames(styles.link, {
+  return <a className={cx(styles.link, {
     [styles.plain]: plain,
     [styles.disabled]: disabled,
   })} href={href} onClick={onClick} target="_blank">{children}</a>
