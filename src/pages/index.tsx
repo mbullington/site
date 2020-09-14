@@ -154,14 +154,14 @@ export default function Index() {
                 </>
               )}
             >
-              Contributor to <strong>geojson.dev</strong>, an effort to build an
+              Core contributor to <strong>geojson.dev</strong>, an effort to build an
               online resource for the GeoJSON format.
               The Playground feature uses Mapbox for rendering GeoJSON data, and
               a modified <strong>Monaco Editor</strong> (same as VSCode) for
               editing and linting the JSON file.
               <br />
               <br />
-              Built by{" "}
+              Built with{" "}
               <Link href="https://www.dubenko.dev/">Oleksandr Dubenko</Link>.
             </Card>
           </TwoCards>
