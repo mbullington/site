@@ -5,7 +5,7 @@
  */
 
 import * as React from "react";
-// import * as ReactDOM from "react-dom"
+import * as ReactDOM from "react-dom"
 
 import DarkModeProvider from "./src/components/DarkModeProvider/DarkModeProvider";
 
@@ -13,4 +13,4 @@ export const wrapRootElement = ({ element }) => (
   <DarkModeProvider>{element}</DarkModeProvider>
 );
 
-// export const replaceHydrateFunction = () => ReactDOM.render;
+export const replaceHydrateFunction = () => ReactDOM.render;
