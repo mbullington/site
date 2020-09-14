@@ -50,6 +50,7 @@ export default function Card({
           <br />
         </span>
       )}
+      {!duration && <div className={styles.noDuration} />}
       {title && (
         <span
           className={titleClasses}

@@ -5,10 +5,7 @@
 
 @import "variables";
 
-@font-face {
-  font-family: "CascadiaCode";
-  src: url("../../static/fonts/CascadiaCode.woff2") format("woff2");
-}
+@import url("/fonts/Webfonts/fonts.css");
 
 * {
   box-sizing: border-box;
@@ -40,4 +37,44 @@ code {
 
   font-family: $font-code;
   font-size: 0.9rem;
+}
+
+ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+ul:hover > li {
+  opacity: 0.4;
+
+  &:hover {
+    opacity: 1;
+    transform: translateX(-($size-6 * 0.15));
+  }
+}
+
+ul > li {
+  transition: opacity 150ms ease-in, transform 200ms ease-in-out;
+  position: relative;
+
+  margin-top: 0.5rem;
+  margin-left: 0.75rem;
+  padding-left: 1.25rem;
+  transform: translateX(0);
+
+  &::after {
+    content: '';
+  
+    position: absolute;
+    top: 0.33rem;
+    left: 0;
+    bottom: 0.33rem;
+  
+    display: block;
+    opacity: 0.6;
+  
+    border-left: 3px solid $accent;
+  }
 }

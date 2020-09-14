@@ -5,8 +5,8 @@ $borderRadius: 0.5rem;
 .imageCard {
   position: relative;
 
+  flex: 1.11111 !important;
   margin: 1rem 0;
-  margin-right: 3rem;
 
   @include mobile {
     display: none;

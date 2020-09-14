@@ -12,7 +12,7 @@
   padding-left: 17%;
   padding-right: 17%;
 
-  background-color: transparent;
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.7483368347338936) 30%, rgba(255,255,255,0) 100%);
 
   @include mobile {
     position: absolute;
@@ -24,6 +24,10 @@
   @include tablet-only {
     position: absolute;
   }
+}
+
+:global(.dark-mode) .header {
+  background: none;
 }
 
 .title {
@@ -55,7 +59,7 @@
   border: 1px solid $white;
   border-radius: 0.5rem;
 
-  @include shadow-4dp();
+  @include shadow-2dp();
 
   @include touch {
     // TODO

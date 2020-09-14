@@ -2,7 +2,7 @@ import * as React from "react";
 import useScrollPosition from "@react-hook/window-scroll";
 import scrollToWithAnimation from "scrollto-with-animation";
 
-import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
+// import DarkModeToggle from "../DarkModeToggle/DarkModeToggle";
 import InlineRow from "../InlineRow/InlineRow";
 import Link from "../Link/Link";
 
@@ -57,10 +57,10 @@ export default function Header() {
   return (
     <InlineRow className={styles.header}>
       <div className={styles.title} onClick={() => scrollTo()}>
-        bullington.xyz
+        ⌘ bullington.xyz
       </div>
       <div className={styles.expanded} />
-      <DarkModeToggle />
+      {/* <DarkModeToggle /> */}
       <InlineRow className={styles.nav}>
         <Link
           plain

@@ -1,13 +1,8 @@
-// Huge thanks to @narative/gatsby-theme-novela for DarkModeToggle
-// and the cool animation.
-//
-// https://github.com/narative/gatsby-theme-novela/blob/master/%40narative/gatsby-theme-novela/src/components/Navigation/Navigation.Header.tsx#L276
+import React from "react";
+import Toggle from "react-toggle";
 
-import * as React from "react";
-import cx from "clsx";
+import clsx from "clsx";
 import useScrollPosition from "@react-hook/window-scroll";
-
-import Icon from "../Icon/Icon";
 
 import {
   DarkModeContext,
@@ -21,6 +16,17 @@ const easeInQuad = (t: number): number => t * t;
 interface Props {
   className?: string;
 }
+
+interface ColorProps {
+  icon: React.ReactNode;
+}
+
+const Dark = ({ icon }: ColorProps) => (
+  <span className={clsx(styles.toggle, styles.dark)}>{icon}</span>
+);
+const Light = ({ icon }: ColorProps) => (
+  <span className={clsx(styles.toggle, styles.light)}>{icon}</span>
+);
 
 export default function DarkModeToggle({ className }: Props) {
   // This should be okay for React Hooks since its based on a static ENV.
@@ -47,15 +53,15 @@ export default function DarkModeToggle({ className }: Props) {
   const [darkMode, setDarkMode] = context;
 
   return (
-    <div
-      className={cx(styles.darkModeToggle, className)}
-      onClick={() => setDarkMode(!darkMode)}
-      style={{ opacity, pointerEvents }}
-    >
-      <Icon>
-        <div className={styles.moonOrSun} />
-        <div className={styles.mask} />
-      </Icon>
+    <div style={{ opacity, pointerEvents }}>
+      <Toggle
+        checked={darkMode}
+        onChange={() => setDarkMode(!darkMode)}
+        icons={{
+          checked: <Dark icon="🌜" />,
+          unchecked: <Light icon="🌞" />,
+        }}
+      />
     </div>
   );
 }

@@ -17,8 +17,7 @@ $white-ter:    hsl(0, 0%, 96%);
 $white-bis:    hsl(0, 0%, 98%);
 $white:        hsl(0, 0%, 100%);
 
-$primary: rgb(147,191,182);
-$accent: rgb(111,36,128);
+$accent: #5758BB;
 
 $dji: rgb(31,150,244);
 $wolfram: rgb(235, 47, 42);
@@ -29,7 +28,7 @@ $br: rgba(219, 219, 219, 0.5);
 // Typography
 
 $font-system: BlinkMacSystemFont, -apple-system, "Roboto", "Helvetica", sans-serif;
-$font-monospace: "CascadiaCode", San Francisco Mono, Monaco, monospace;
+$font-monospace: "iA Writer Duospace", San Francisco Mono, Monaco, monospace;
 
 $font-title: $font-monospace;
 $font-text: "Work Sans", $font-system;

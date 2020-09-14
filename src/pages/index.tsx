@@ -57,14 +57,14 @@ export default function Index() {
           <TwoCards>
             <Card
               title="Interval"
-              duration="April 2019 — Present"
+              duration="April 2019"
               links={() => (
                 <>
                   <Link href="https://play.google.com/store/apps/details?id=xyz.bullington.interval">
                     Play Store
                   </Link>
-                  <Link href="https://github.com/mbullington/interval-issues/milestone/1">
-                    Roadmap
+                  <Link href="https://pratti.design/interval">
+                    Design Study
                   </Link>
                 </>
               )}
@@ -78,17 +78,15 @@ export default function Index() {
               <i>shown right on desktop</i>), and <strong>CSV Export</strong>.
               <br />
               <br />
-              Technically, Interval is built almost entirely in{" "}
-              <strong>Flutter</strong>, with the timer being implemented as a
-              background service in <strong>Kotlin</strong>. The app’s data is
-              stored entirely on-device with an <strong>SQLite</strong>{" "}
-              database.
+              Interval is built entirely with <strong>Flutter</strong>.
               <br />
               <br />
-              Designed by{" "}
+              Designed alongside{" "}
               <Link href="https://pratti.design">
                 Eduardo Pratti
-              </Link> using <strong>Figma</strong>.
+              </Link> using <strong>Figma</strong>. (Eduardo killed it with the
+              design! You can check out his design case study{" "}
+              <Link href="https://pratti.design/interval">here</Link>.)
             </Card>
             <ImageCard>
               <IntervalScreenshot />
@@ -137,14 +135,14 @@ export default function Index() {
             title="DJI Research LLC."
             titleBackground={styles.dji}
             duration="May 2019 — Present"
-            location="Palo Alto, CA | Shenzhen, China | Remote"
+            location="Remote | Palo Alto, CA | Shenzhen, China"
             links={() => (
               <>
                 <a href="http://dji.com" target="_blank">
                   <FA icon={faGlobeAsia} />
                 </a>
-                <Link href="https://we.dji.com/detail_en.html#1318&Palo%20Alto">
-                  We’re hiring!
+                <Link href="https://apps.apple.com/us/app/airworks/id1437859670">
+                  AirWorks — App Store
                 </Link>
               </>
             )}
@@ -155,18 +153,29 @@ export default function Index() {
             <br />
             <ul>
               <li>
+                Currently researching & developing a strategy for NIST 800-53
+                compliance in US Web Team projects.
+              </li>
+              <li>
                 Lead front-end web development for a special project using Vue 2
-                and Mapbox. The product requires close coordination with
-                government regulations and DJI teams in Shenzhen. The product
-                will have a focus on the North American market.
+                and Mapbox. The product requires close compliance with
+                government guidelines and collaboration with DJI teams in
+                Shenzhen. The product will have a focus on the North American
+                market.
               </li>
               <li>
-                Collaborated on a technical timeline for the project, detailing
-                tasks to front-end engineers in both Palo Alto and Shenzhen.
+                Re-built the DJI AirWorks experience using React Native and
+                Express.js with others in the US Web Team. Duties were shared
+                and include design, development, QA testing, and deployment.
               </li>
               <li>
-                Helped to interview candidates for various web positions in the
-                company.
+                Establishing practices for how the US Web Team writes frontend
+                software and JavaScript. Contributed to{" "}
+                <Link href="https://github.com/Turfjs/turf">Turf.JS</Link> and
+                various other open-source projects representing DJI.
+              </li>
+              <li>
+                Interviewed candidates for various web positions in the company.
               </li>
             </ul>
           </Card>
@@ -182,7 +191,7 @@ export default function Index() {
                   <FA icon={faGlobeAmericas} />
                 </a>
                 <Link href=" https://medium.com/wolfram-developers/modernizing-math-typesetting-with-svg-8d82ca606b9a">
-                  Technical Post
+                  Technical Writing
                 </Link>
               </>
             )}
