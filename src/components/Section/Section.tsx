@@ -1,9 +1,10 @@
 import * as React from "react";
 
 import styles from "./Section.module.scss";
+import Link from "../Link/Link";
 
 interface Props {
-  title: String;
+  title: React.ReactNode;
   children?: React.ReactNode;
   id?: string;
 }
@@ -11,8 +12,10 @@ interface Props {
 export default function Section({ title, children, id }: Props) {
   return (
     <section className={styles.section} id={id}>
-      <h2 className={styles.title}>{title}</h2>
+      <h2 className={styles.title}>
+        {title}
+      </h2>
       {children}
     </section>
-  )
+  );
 }

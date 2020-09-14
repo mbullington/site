@@ -12,12 +12,13 @@ import Footer from "../components/Footer/Footer";
 import Main from "../components/Main/Main";
 import Section from "../components/Section/Section";
 import Card from "../components/Card/Card";
-import Link from "../components/Link/Link";
+import Link, { GatsbyLink } from "../components/Link/Link";
 import { FA } from "../components/Icon/Icon";
 import ImageCard from "../components/ImageCard/ImageCard";
 import SEO from "../components/SEO/SEO";
 
 import IntervalScreenshot from "../components/Image/IntervalScreenshot";
+import AirWorksScreenshot from "../components/Image/AirWorksScreenshot";
 import DJILogo from "../components/Image/DJILogo";
 import WolframLogo from "../components/Image/WolframLogo";
 import DGLogikLogo from "../components/Image/DGLogikLogo";
@@ -53,7 +54,17 @@ export default function Index() {
   return (
     <Layout>
       <Main>
-        <Section title="Projects" id="projects">
+        <Section
+          title={
+            <>
+              Select Projects
+              {/* <div>
+                <GatsbyLink href="/projects">See ‘all projects’</GatsbyLink>
+              </div> */}
+            </>
+          }
+          id="projects"
+        >
           <TwoCards>
             <Card
               title="Interval"
@@ -92,40 +103,66 @@ export default function Index() {
               <IntervalScreenshot />
             </ImageCard>
           </TwoCards>
+
           <TwoCards>
             <Card
-              title="DISKS"
-              duration="May 2017"
+              title="HackPSU"
+              duration="September 2019 — Present"
+              location="State College, PA"
               links={() => (
                 <>
+                  <a href="https://hackpsu.org/" target="_blank">
+                    <FA icon={faGlobeAmericas} />
+                  </a>
                   <a
-                    href="https://github.com/mbullington/disks"
+                    href="https://github.com/hack-PSU/frontend-app"
                     target="_blank"
                   >
                     <FA icon={faGithub} />
                   </a>
-                  <a href="https://disks.bullington.xyz" target="_blank">
-                    <FA icon={faGlobeAmericas} />
-                  </a>
-                  <Link href="http://gamescrafters.berkeley.edu/games.php?game=dao">
-                    Dao (inspiration)
-                  </Link>
                 </>
               )}
             >
-              Simple two-player puzzle game. Focuses on local multiplayer, and
-              is inspired by other great puzzle games like Dao. Later updated to
-              learn about PWAs.
+              A bi-yearly hackathon organized by students at Penn State
+              University. In November 2019 HackPSU saw nearly 900 attendees.
+              HackPSU is an official MLH hackathon.
+              <br />
+              <br />
+              As part of the HackPSU Tech Team, currently working with{" "}
+              <Link href="https://rahulramkumar.dev/">Rahul Ramkumar</Link> to
+              develop a mobile app for HackPSU using{" "}
+              <strong>React Native</strong> and Firebase.
+              <br />
+              <br />
+              All HackPSU development is open-source and can be seen below.
             </Card>
 
             <Card
-              title="Jackson Plumbing"
-              duration="May 2018 — October 2018"
-              location="Erie, PA"
+              title="geojson.dev"
+              duration="May 2020"
+              links={() => (
+                <>
+                  <Link href="https://playground.geojson.dev/">
+                    GeoJSON Playground
+                  </Link>
+                  <a
+                    href="https://github.com/sniok/geojson.dev"
+                    target="_blank"
+                  >
+                    <FA icon={faGithub} />
+                  </a>
+                </>
+              )}
             >
-              Built a form generator using <strong>Electron</strong> and{" "}
-              <strong>React</strong> for a local utility company. The work also
-              included a simple DOCX templating engine.
+              Contributor to <strong>geojson.dev</strong>, an effort to build an
+              online resource for the GeoJSON format.
+              The Playground feature uses Mapbox for rendering GeoJSON data, and
+              a modified <strong>Monaco Editor</strong> (same as VSCode) for
+              editing and linting the JSON file.
+              <br />
+              <br />
+              Built by{" "}
+              <Link href="https://www.dubenko.dev/">Oleksandr Dubenko</Link>.
             </Card>
           </TwoCards>
         </Section>
@@ -164,11 +201,6 @@ export default function Index() {
                 market.
               </li>
               <li>
-                Re-built the DJI AirWorks experience using React Native and
-                Express.js with others in the US Web Team. Duties were shared
-                and include design, development, QA testing, and deployment.
-              </li>
-              <li>
                 Establishing practices for how the US Web Team writes frontend
                 software and JavaScript. Contributed to{" "}
                 <Link href="https://github.com/Turfjs/turf">Turf.JS</Link> and
@@ -179,6 +211,35 @@ export default function Index() {
               </li>
             </ul>
           </Card>
+
+          <TwoCards>
+            <ImageCard>
+              <AirWorksScreenshot />
+            </ImageCard>
+            <Card
+              title="DJI AirWorks"
+              duration="May — August 2020"
+              links={() => (
+                <>
+                  <Link href="https://apps.apple.com/us/app/airworks/id1437859670">
+                    App Store
+                  </Link>
+                  <Link href="https://play.google.com/store/apps/details?id=com.dji.airworks&hl=en_US">
+                    Play Store
+                  </Link>
+                </>
+              )}
+            >
+              Re-built the DJI AirWorks experience to adapt to an online-first
+              conference amid the COVID-19 pandemic.
+              <br />
+              <br />
+              <strong>React Native</strong>, Express.js, and Mongoose were used
+              to build the application. Duties were shared across the US Web
+              Team and include design, development, QA testing, and deployment
+              on AWS East.
+            </Card>
+          </TwoCards>
 
           <Card
             title="Wolfram Research Inc."
