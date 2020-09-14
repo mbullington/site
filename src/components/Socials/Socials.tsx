@@ -19,7 +19,7 @@ export default function Socials() {
       <a href="https://github.com/mbullington" target="_blank">
         <FA icon={faGithub} />
       </a>
-      <a href="https://twitter.com/mikebullingtn" target="_blank">
+      <a href="https://twitter.com/mbullington_" target="_blank">
         <FA icon={faTwitter} />
       </a>
 
