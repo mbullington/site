@@ -34,7 +34,6 @@
     "@types/react-dom": "^16.8.5",
     "@types/react-helmet": "^5.0.9",
     "@types/react-toggle": "^4.0.2",
-    "gh-pages": "^2.1.1",
     "prettier": "^1.18.2",
     "typescript": "^3.5.3"
   },
@@ -43,7 +42,6 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "deploy": "gatsby build && gh-pages -d public"
+    "clean": "gatsby clean"
   }
 }
