@@ -25,7 +25,7 @@ export default function Socials() {
         <FA icon={faTwitter} />
       </a>
 
-      <Link href="resume.pdf">Resume / CV</Link>
+      <Link href="static/resume.pdf">Resume / CV</Link>
     </InlineRow>
   );
 }
