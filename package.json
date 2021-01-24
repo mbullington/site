@@ -4,11 +4,9 @@
   "description": "A simple starter to get up and developing quickly with Gatsby",
   "version": "1.0.0",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "start": "npm run develop",
+    "build": "eleventy",
     "serve": "eleventy --serve",
-    "clean": "gatsby clean"
+    "clean": "rm -rf _site"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
