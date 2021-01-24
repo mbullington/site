@@ -1,30 +1,20 @@
 import * as React from "react";
+import cx from "clsx";
 
-import {
-  faGlobeAsia,
-  faGlobeAmericas,
-} from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
-import Header from "../components/Header/Header";
-import Hero from "../components/Hero/Hero";
-import Footer from "../components/Footer/Footer";
-import Main from "../components/Main/Main";
-import Section from "../components/Section/Section";
-import Card from "../components/Card/Card";
-import Link, { GatsbyLink } from "../components/Link/Link";
-import { FA } from "../components/Icon/Icon";
-import ImageCard from "../components/ImageCard/ImageCard";
-import SEO from "../components/SEO/SEO";
+import Hero from "../components/Hero";
+import Footer from "../components/Footer";
+import Main from "../components/Main";
+import Section from "../components/Section";
+import Card from "../components/Card";
+import Link from "../components/Link";
+import { FA } from "../components/Icon";
+import ImageCard from "../components/ImageCard";
+import SEO from "../components/SEO";
 
-import IntervalScreenshot from "../components/Image/IntervalScreenshot";
-import AirWorksScreenshot from "../components/Image/AirWorksScreenshot";
-import DJILogo from "../components/Image/DJILogo";
-import WolframLogo from "../components/Image/WolframLogo";
-import DGLogikLogo from "../components/Image/DGLogikLogo";
-
-import "../styles/global.scss";
-import styles from "./index.module.scss";
+import useEleventy from "../components/useEleventy"
+import Markup from "../components/Markup";
 
 interface Props {
   children: React.ReactNode;
@@ -32,9 +22,8 @@ interface Props {
 
 export function Layout({ children }: Props) {
   return (
-    <div className={styles.layout}>
+    <div className="layout">
       <SEO />
-      <Header />
       <Hero />
       <div>{children}</div>
       <Footer />
@@ -47,39 +36,97 @@ interface TwoCardsProps {
 }
 
 export function TwoCards({ children }: TwoCardsProps) {
-  return <div className={styles.twoCards}>{children}</div>;
+  return <div className={"twoCards"}>{children}</div>;
 }
 
 export default function Index() {
+  const { images } = useEleventy()
+
   return (
     <Layout>
       <Main>
+        <Section title="Portfolio">
+        <ImageCard html={images.airworks_screenshot} />
+          <Card
+            title="DJI Research LLC."
+            titleBackground={"dji"}
+            duration="May 2019 — Jan 2021"
+            logo={() => <Markup html={images.dji_logo} />}
+            logoBackground="var(--dji)"
+          >
+            <p>
+              I worked at <Link href="https://enterprise.dji.com">DJI Research</Link> both full-time and during college as a Front-End Web Engineering Intern. Along with this role, I also held project-specific titles of Product Manager, Compliance Lead, and Interim Tech Lead.
+              <br /><br />
+              Starting in Q4 2020 my full-time role was <strong>Product Manager</strong> focusing on Public Safety for the US/Canada under <Link href="https://www.dji.com/flysafe">DJI FlySafe</Link>. The role included planning roadmap/releases for our 4-person team and maintaining relationships with stakeholders. In place of a dedicated <strong>product designer</strong>, I performed the role as PM and created high-fidelity designs for all application flows using Sketch.
+              <br /><br />
+              As Compliance Lead, I initiated compliance with the <strong>NIST 800-53 r4</strong> framework. This included authoring over 70 controls, creating a proposal to stakeholders, and helping the Tech Lead create compliant solutions.
+              <br /><br />
+              As Interim Tech Lead from Q2 2019 to Q2 2020, I led front-end development for DJI's <Link href="https://www.faa.gov/uas/programs_partnerships/data_exchange/">FAA LAANC</Link> service. This included collaborating in-person with technical expertise from Palo Alto and Shenzhen to build a complex web mapping product. The project required strict adherance to FAA advisory rule sets.
+              <br /><br />
+              I was a foundational member for how the Palo Alto office ("USPA") writes JavaScript. I created and open-sourced <Link href="https://github.com/dji-dev/us-web">dji-dev/us-web</Link> and contributed to <strong>Turf.js</strong> representing DJI. Additionally, I worked on multiple projects such as DJI AirWorks.
+            </p>
+          </Card>
+
+          <Card
+            title="Wolfram Research Inc."
+            titleBackground={"wolfram"}
+            duration="May 2018 — May 2019"
+            logo={() => <Markup html={images.wolfram_logo} />}
+            logoBackground="var(--wolfram)"
+          >
+            <p>
+            I worked as a summer intern on the <Link href="https://www.wolfram.com/cloud/">Wolfram Cloud</Link> team, which continued part-time during college to Q2 2019.
+            <br /><br />
+            My main project was overhauling the typesetting engine to improve aesthetic and accuracy. The "new" look was inspired by metrics from LaTeX and Wolfram Player for iOS. I wrote about algorithms I developed in <Link href="https://medium.com/wolfram-developers/modernizing-math-typesetting-with-svg-8d82ca606b9a">{'Modernizing Math Typesetting with SVG'}</Link>.
+            <br /><br />
+            I also created a clean-room implementation of <Link href="https://reference.wolfram.com/language/ref/DynamicGeoGraphics.html">DynamicGeoGraphics</Link> on the web using Leaflet. <code>DynamicGeoGraphics</code> is a data-driven component which supports arbitrary polygons, geographic projections, and "markers" that interact with the DOM.
+            </p>
+          </Card>
+
+          <Card
+            title="DGLogik Inc."
+            titleBackground={"dglogik"}
+            duration="April 2015 — May 2018"
+            logo={() => <Markup html={images.dglogik_logo} />}
+            logoBackground="var(--dglogik)"
+          >
+            <p>
+              I started work part-time at <Link href="https://www.dglogik.com/">DGLogik</Link> as an IoT Software Engineer and continued throughout high school and early college. During my time at DGLogik, I worked on specialized IoT solutions for customers like Cisco, IBM, and Apple. 
+              <br /><br />
+              I was a core member of the <Link href="https://github.com/IOT-DSA">IOT-DSA</Link> protocol created by <Link href="https://deepmess.com/en/">Rick Zhou</Link>. For DSA, I developed the initial JavaScript SDK and additional IoT bridges for industry and consumer products. Eventually, I created the infrastructure to run our flagship Dart SDK from Node.js.
+              <br /><br />
+              In 2016 DGLogik Inc. was acquired by Acuity Brands, where I was re-hired as a part-time Software Engineer.
+              <br /><br />
+              In this time, I made significant contributions to <Link href="https://www.dglogik.com/products/dglux-for-dsa">DGLux5</Link>, a low-code environment for creating IoT dashboards. "Owned" features for web include technologies such as Mapbox, D3, and THREE.js. Most of these features were created for <Link href="https://www.acuitybrands.com/products/detail/775921/atrius/atrius-insights/atrius-insights-spatial-analytics-platform-service-and-web-application">Atrius Insights</Link>.
+            </p>
+          </Card>
+        </Section>
+
         <Section
-          title={
-            <>
-              Select Projects
-              {/* <div>
-                <GatsbyLink href="/projects">See ‘all projects’</GatsbyLink>
-              </div> */}
-            </>
-          }
-          id="projects"
+          title="Side Projects"
         >
-          <TwoCards>
+            <ImageCard html={images.interval_screenshot} />
             <Card
               title="Interval"
-              duration="April 2019"
               links={() => (
                 <>
-                  <Link href="https://play.google.com/store/apps/details?id=xyz.bullington.interval">
-                    Play Store
-                  </Link>
-                  <Link href="https://pratti.design/interval">
-                    Design Study
-                  </Link>
+                  <a
+                    href="https://play.google.com/store/apps/details?id=xyz.bullington.interval"
+                    target="_blank"
+                  >
+                    <img src="/images/google-play.png" />
+                  </a>
+                  
                 </>
               )}
+              style={{ minHeight: "40vh" }}
             >
+              <p>
+              Designed alongside{" "}
+              <Link href="https://pratti.design/interval">
+                Eduardo Pratti
+              </Link>.
+              <br /><br />
               We built Interval around what I would want in a time tracker,
               based on my experience as a remote developer. By emphasizing good
               design, Interval makes it super simple to go from ‘
@@ -87,287 +134,33 @@ export default function Index() {
               Features that help with this include a <strong>Timer</strong>,{" "}
               <strong>History</strong> tab to manually add entries (
               <i>shown right on desktop</i>), and <strong>CSV Export</strong>.
-              <br />
-              <br />
+              <br /><br />
               Interval is built entirely with <strong>Flutter</strong>.
-              <br />
-              <br />
-              Designed alongside{" "}
-              <Link href="https://pratti.design">
-                Eduardo Pratti
-              </Link> using <strong>Figma</strong>. (Eduardo killed it with the
-              design! You can check out his design case study{" "}
-              <Link href="https://pratti.design/interval">here</Link>.)
+              </p>
             </Card>
-            <ImageCard>
-              <IntervalScreenshot />
-            </ImageCard>
-          </TwoCards>
 
           <TwoCards>
+            <ImageCard html={images.hackpsu_screenshot} />
             <Card
               title="HackPSU"
-              duration="September 2019 — Present"
-              location="State College, PA"
-              links={() => (
-                <>
-                  <a href="https://hackpsu.org/" target="_blank">
-                    <FA icon={faGlobeAmericas} />
-                  </a>
-                  <a
-                    href="https://github.com/hack-PSU/frontend-app"
-                    target="_blank"
-                  >
-                    <FA icon={faGithub} />
-                  </a>
-                </>
-              )}
             >
-              A bi-yearly hackathon organized by students at Penn State
-              University. In November 2019 HackPSU saw nearly 900 attendees.
-              HackPSU is an official MLH hackathon.
-              <br />
-              <br />
+              <p>
               As part of the HackPSU Tech Team, currently working with{" "}
-              <Link href="https://rahulramkumar.dev/">Rahul Ramkumar</Link> to
-              develop a mobile app for HackPSU using{" "}
-              <strong>React Native</strong> and Firebase.
-              <br />
-              <br />
-              All HackPSU development is open-source and can be seen below.
-            </Card>
-
-            <Card
-              title="geojson.dev"
-              duration="May 2020"
-              links={() => (
-                <>
-                  <Link href="https://playground.geojson.dev/">
-                    GeoJSON Playground
-                  </Link>
-                  <a
-                    href="https://github.com/sniok/geojson.dev"
-                    target="_blank"
-                  >
-                    <FA icon={faGithub} />
-                  </a>
-                </>
-              )}
-            >
-              Core contributor to <strong>geojson.dev</strong>, an effort to build an
-              online resource for the GeoJSON format.
-              The Playground feature uses Mapbox for rendering GeoJSON data, and
-              a modified <strong>Monaco Editor</strong> (same as VSCode) for
-              editing and linting the JSON file.
-              <br />
-              <br />
-              Built with{" "}
-              <Link href="https://www.dubenko.dev/">Oleksandr Dubenko</Link>.
-            </Card>
-          </TwoCards>
-        </Section>
-
-        <Section title="Work Experience" id="work-experience">
-          <Card
-            title="DJI Research LLC."
-            titleBackground={styles.dji}
-            duration="May 2019 — Present"
-            location="Remote | Palo Alto, CA | Shenzhen, China"
-            links={() => (
-              <>
-                <a href="http://dji.com" target="_blank">
-                  <FA icon={faGlobeAsia} />
-                </a>
-                <Link href="https://apps.apple.com/us/app/airworks/id1437859670">
-                  AirWorks — App Store
-                </Link>
-              </>
-            )}
-            logo={() => <DJILogo />}
-            logoBackground={styles.dji}
-          >
-            Front-End Engineering Intern
-            <br />
-            <ul>
-              <li>
-                Currently researching & developing a strategy for NIST 800-53
-                compliance in US Web Team projects.
-              </li>
-              <li>
-                Lead front-end web development for a special project using Vue 2
-                and Mapbox. The product requires close compliance with
-                government guidelines and collaboration with DJI teams in
-                Shenzhen. The product will have a focus on the North American
-                market.
-              </li>
-              <li>
-                Establishing practices for how the US Web Team writes frontend
-                software and JavaScript. Contributed to{" "}
-                <Link href="https://github.com/Turfjs/turf">Turf.JS</Link> and
-                various other open-source projects representing DJI.
-              </li>
-              <li>
-                Interviewed candidates for various web positions in the company.
-              </li>
-            </ul>
-          </Card>
-
-          <TwoCards>
-            <ImageCard>
-              <AirWorksScreenshot />
-            </ImageCard>
-            <Card
-              title="DJI AirWorks"
-              duration="May — August 2020"
-              links={() => (
-                <>
-                  <Link href="https://apps.apple.com/us/app/airworks/id1437859670">
-                    App Store
-                  </Link>
-                  <Link href="https://play.google.com/store/apps/details?id=com.dji.airworks&hl=en_US">
-                    Play Store
-                  </Link>
-                </>
-              )}
-            >
-              Re-built the DJI AirWorks experience to adapt to an online-first
-              conference amid the COVID-19 pandemic.
-              <br />
-              <br />
-              <strong>React Native</strong>, Express.js, and Mongoose were used
-              to build the application. Duties were shared across the US Web
-              Team and include design, development, QA testing, and deployment
-              on AWS East.
-            </Card>
-          </TwoCards>
-
-          <Card
-            title="Wolfram Research Inc."
-            titleBackground={styles.wolfram}
-            duration="May 2018 — May 2019"
-            location="Champaign, IL | Remote"
-            links={() => (
-              <>
-                <a href="https://www.wolfram.com/cloud/" target="_blank">
-                  <FA icon={faGlobeAmericas} />
-                </a>
-                <Link href=" https://medium.com/wolfram-developers/modernizing-math-typesetting-with-svg-8d82ca606b9a">
-                  Technical Writing
-                </Link>
-              </>
-            )}
-            logo={() => <WolframLogo />}
-            logoBackground={styles.wolfram}
-          >
-            Intern, Core Engine R&D
-            <br />
-            <ul>
-              <li>
-                Developed user-facing features for Wolfram Cloud using web
-                technologies such as React and Flow.
-              </li>
-              <li>
-                Overhauled typesetting engine to improve aesthetic and better
-                match TeX-like specifications. Wrote a technical post named{" "}
-                <b>Modernizing Math Typesetting with SVG</b>, linked below.
-              </li>
-              <li>
-                Created a library-agnostic mapping solution with default Leaflet
-                driver, combining Wolfram’s rich computational intelligence with
-                mapping on the web.
-              </li>
-            </ul>
-          </Card>
-
-          <Card
-            title="DGLogik Inc."
-            titleBackground={styles.dglogik}
-            duration="April 2018 — May 2018"
-            location="Oakland, CA | Remote"
-            links={() => (
-              <>
-                <a href="http://dglogik.com" target="_blank">
-                  <FA icon={faGlobeAmericas} />
-                </a>
-                <Link href="https://github.com/IOT-DSA">Protocol</Link>
-                <Link href="http://dglogik.com/our-platform/dglux">
-                  DGLux 5
-                </Link>
-              </>
-            )}
-            logo={() => <DGLogikLogo />}
-            logoBackground={styles.dglogik}
-          >
-            Part-Time Software Developer
-            <br />
-            <ul>
-              <li>
-                Developed bespoke IoT solutions for an array of Fortune 500
-                companies such as Cisco, IBM, and Intel.
-              </li>
-              <li>
-                Helped create a secure protocol for IoT devices, including a
-                JavaScript and Dart SDK implementation. It is now an integral
-                part of their stack and ships to thousands of customers
-                worldwide.
-              </li>
-              <li>
-                Architected multiple prototypes using D3, THREE.js, and Xamarin.
-                Integrated a new mapping solution based on Mapbox into DGLux 5,
-                the company’s main product.
-              </li>
-              <li>
-                Transitioned a portion of the company’s internal processes after
-                acquisition by Acuity Brands Inc.
-              </li>
-            </ul>
-          </Card>
-        </Section>
-
-        {/* <Section title="Education">
-            <Card
-              title="Pennsylvania State University"
-              duration="August 2017 — May 2021 (projected)"
-              location="State College, PA | prev Erie, PA"
-            >
-              Persuing a Bachelor’s Degree in <strong>Computer Science</strong>.
-              <br />
-              <br />
-              Activities:
-              <ul>
-                <li>Schreyer Honors College</li>
-                <li>Drumline (Behrend Drumlions)</li>
-                <li>Behrend Energy Initiative</li>
-                <li>HackPSU Participant</li>
-              </ul>
-            </Card>
-          </Section> */}
-
-        <Section title="Open Source" id="open-source">
-          <TwoCards>
-            <Card
-              title="yellowstone"
-              links={() => (
-                <>
-                  <a
-                    href="https://github.com/mbullington/yellowstone"
-                    target="_blank"
-                  >
-                    <FA icon={faGithub} />
-                  </a>
-                  <Link href="https://github.com/mbullington/yellowstone/blob/master/examples/wowza.js">
-                    Example Code
-                  </Link>
-                </>
-              )}
-            >
-              Pure TypeScript implementation of RTP/RTSP client protocols for
-              video streaming without external tools such as
-              <code>ffmpeg</code>. Supports H264 transport and additional IP
-              camera features.
+              <Link href="https://rahulramkumar.dev/">Rahul Ramkumar</Link> and many others
+              on HackPSU's mobile app.
+              <br /><br />
+              <Link href="https://hackpsu.org/">
+                    HackPSU
+                  </Link> is a bi-yearly hackathon organized by students at Penn State
+              University. In Nov 2019 HackPSU saw nearly 900 attendees.
+              HackPSU is an official MLH hackathon.
+              <br /><br />
+              I designed our app and kickstarted development, helping to mentor other students in JavaScript, React Native, and good software practices. All HackPSU development is <Link href="https://github.com/hack-PSU/frontend-app">open-source</Link>.
+              </p>
             </Card>
             <Card
               title="node_preamble.dart"
+              duration="2019"
               links={() => (
                 <a
                   href="https://github.com/mbullington/node_preamble.dart"
@@ -407,22 +200,28 @@ export default function Index() {
               and Dart classes. Also generates TypeScript definitions.
             </Card>
             <Card>
-              <div className={styles.hint}>
+              <div className={"hint"}>
                 Check out my{" "}
-                <a href="https://github.com/mbullington" target="_blank">
+                <Link href="https://github.com/mbullington">
                   other GitHub projects
-                </a>
+                </Link>
                 ! I’ve been an open-source contributor{" "}
-                <a
-                  href="https://github.com/Polymer/polymer/issues/646"
-                  target="_blank"
-                >
+                <Link href="https://github.com/Polymer/polymer/issues/646">
                   since 2014
-                </a>
+                </Link>
                 .
               </div>
             </Card>
           </TwoCards>
+        </Section>
+        <Section title="Sitemap" id="sitemap">
+            <p className={"sitemapText"}>
+              The sitemap contains links to other places on the site and affiliates. Some of these are unmaintained but linked for posterity.
+            </p>
+            <a href="https://bullington.xyz" target="_blank" className="sitemap disabled">Home</a>
+            <a href="https://www.producthunt.com/upcoming/interval-2-0" target="_blank" className="sitemap">Interval 2.0</a>
+            <a href="https://geojson.dev" target="_blank" className="sitemap">geojson.dev</a>
+            <a href="https://disks.bullington.xyz" target="_blank" className="sitemap disabled">DISKS</a>
         </Section>
       </Main>
     </Layout>

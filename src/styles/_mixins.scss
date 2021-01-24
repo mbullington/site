@@ -8,12 +8,7 @@
 @mixin link-plain-style() {
   position: relative;
 
-  opacity: 0.8;
-  transition: color 150ms ease, opacity 300ms;
-
-  &:hover {
-    opacity: 1;
-  }
+  transition: color 150ms ease;
 }
 
 @mixin link-style($color, $size) {
@@ -30,47 +25,16 @@
 
     border-bottom: $size solid $color;
     opacity: 0.8;
-    transition: transform 300ms, opacity 300ms;
+    transition: border-bottom-color 150ms ease;
 
     transform: translateY(($size * 0.5));
   }
 
   &:hover::after {
-    opacity: 1;
-    transform: translateY(($size * 1.5));
+    border-bottom-color: $pico-title;
   }
-}
 
-// Modified from the old Material Design Lite:
-// https://github.com/google/material-design-lite/blob/60f441a22ed98ed2c03f6179adf460d888bf459f/src/_variables.scss
-// https://github.com/google/material-design-lite/blob/60f441a22ed98ed2c03f6179adf460d888bf459f/src/_mixins.scss
-
-$shadow-key-umbra-opacity: 0.1 !default;
-$shadow-key-penumbra-opacity: 0.07 !default;
-$shadow-ambient-shadow-opacity: 0.06 !default;
-
-@mixin shadow-2dp() {
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity),
-              0 3px 1px -2px rgba(0, 0, 0, $shadow-key-umbra-opacity),
-              0 1px 5px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity);
-}
-@mixin shadow-3dp() {
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity),
-              0 3px 3px -2px rgba(0, 0, 0, $shadow-key-umbra-opacity),
-              0 1px 8px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity);
-}
-@mixin shadow-4dp() {
-  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity),
-              0 1px 10px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity),
-              0 2px 4px -1px rgba(0, 0, 0, $shadow-key-umbra-opacity);
-}
-@mixin shadow-6dp() {
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, $shadow-key-penumbra-opacity),
-              0 1px 18px 0 rgba(0, 0, 0, $shadow-ambient-shadow-opacity),
-              0 3px 5px -1px rgba(0, 0, 0, $shadow-key-umbra-opacity);
-}
-@mixin shadow-8dp() {
-  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, $shadow-key-penumbra-opacity),
-              0 3px 14px 2px rgba(0, 0, 0, $shadow-ambient-shadow-opacity),
-              0 5px 5px -3px rgba(0, 0, 0, $shadow-key-umbra-opacity);
+  &:hover {
+    color: $pico-title;
+  }
 }

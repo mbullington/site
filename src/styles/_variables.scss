@@ -17,7 +17,11 @@ $white-ter:    hsl(0, 0%, 96%);
 $white-bis:    hsl(0, 0%, 98%);
 $white:        hsl(0, 0%, 100%);
 
-$accent: #5758BB;
+// Pico-8 colors ;)
+$accent: #065AB5;
+$accent-light: #29ADFF;
+$pico-bg: whitesmoke;
+$pico-title: #125359;
 
 $dji: rgb(31,150,244);
 $wolfram: rgb(235, 47, 42);
@@ -27,11 +31,12 @@ $br: rgba(219, 219, 219, 0.5);
 
 // Typography
 
-$font-system: BlinkMacSystemFont, -apple-system, "Roboto", "Helvetica", sans-serif;
-$font-monospace: "iA Writer Duospace", San Francisco Mono, Monaco, monospace;
+// https://markdotto.com/2018/02/07/github-system-fonts/
+$font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-monospace: "iA Writer Duospace", San Francisco Mono, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 
 $font-title: $font-monospace;
-$font-text: "Work Sans", $font-system;
+$font-text: "Lato", $font-system;
 $font-code: $font-monospace;
 
 $size-title: 4.5rem;

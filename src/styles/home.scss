@@ -1,0 +1,121 @@
+@import "import_styles";
+
+.layout {
+  transition: background-color 450ms ease;
+
+  background-color: $white;
+
+  &::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    pointer-events: none;
+
+    display: block;
+    min-height: 8rem;
+    padding-left: 17%;
+    padding-right: 17%;
+
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 1) 0%,
+      rgba(255, 255, 255, 0.7483368347338936) 30%,
+      rgba(255, 255, 255, 0) 100%
+    );
+
+    @include mobile {
+      position: absolute;
+
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    @include tablet-only {
+      position: absolute;
+    }
+  }
+}
+
+:global(.dark-mode) .layout {
+  background-color: $black;
+}
+
+.twoCards {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-content: stretch;
+
+  & > div {
+    flex: 1;
+    margin-top: 0rem !important;
+  }
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  @include tablet {
+    & > div:last-child {
+      margin-left: 2rem;
+    }
+  }
+}
+
+.hint {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
+  margin-top: calc((280px - 1.5 * 5 * #{$size-5}) / 2);
+  margin-bottom: 2.5rem;
+
+  font-size: $size-6;
+
+  & a {
+    color: $accent;
+    text-decoration-color: $accent;
+  }
+}
+
+:global(.dark-mode) .hint a {
+  $color: lighten($accent, 30%);
+
+  color: $color;
+  text-decoration-color: $color;
+}
+
+.sitemapText {
+  color: $black-bis;
+  @include text-style();
+}
+
+.sitemap {
+  transition: background-color 150ms ease;
+
+  display: inline-block;
+
+  font-size: $size-5;
+  font-family: $font-title;
+  line-height: $size-3;
+  font-weight: bold;
+  text-decoration: none;
+
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  background-color: $accent-light;
+  color: white;
+
+  &:hover {
+    background-color: $accent;
+  }
+
+  &.disabled,&.disabled:hover {
+    background-color: rgba(0,0,0,0.05);
+    color: $black-ter;
+  }
+}

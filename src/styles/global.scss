@@ -1,14 +1,22 @@
-@import "bulma/sass/utilities/_all.sass";
-@import "bulma/sass/grid/columns.sass";
-
-@import url("https://fonts.googleapis.com/css?family=Work+Sans:400,700");
 
 @import "variables";
+@import "import_styles";
 
-@import url("/fonts/Webfonts/fonts.css");
+@mixin shadow-6dp() {
+  box-shadow: rgba(0, 0, 0, 0.2) 0 14px 24px -6px;
+}
+@mixin shadow-8dp() {
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 28px 32px -8px;
+}
 
 * {
   box-sizing: border-box;
+}
+
+:root {
+  --dji: rgb(31, 150, 244);
+  --wolfram: rgb(235, 47, 42);
+  --dglogik: rgb(0, 189, 255);
 }
 
 html,
@@ -16,6 +24,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
+  font-size: 17px;
 }
 
 body {
@@ -37,6 +46,9 @@ code {
 
   font-family: $font-code;
   font-size: 0.9rem;
+
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
 }
 
 ul {
@@ -65,16 +77,390 @@ ul > li {
   transform: translateX(0);
 
   &::after {
-    content: '';
-  
+    content: "";
+
     position: absolute;
     top: 0.33rem;
     left: 0;
     bottom: 0.33rem;
-  
+
     display: block;
     opacity: 0.6;
-  
+
     border-left: 3px solid $accent;
+  }
+}
+
+.card {
+  position: relative;
+  transition: all 450ms ease;
+
+  min-height: 260px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
+
+  background-color: $pico-bg;
+  border: 1px solid $white;
+  border-radius: 0.5rem;
+
+  color: $black-bis;
+
+  @include text-style();
+
+  &.hasLinks {
+    padding-bottom: 4rem;
+  }
+
+  @include tablet {
+    &.hasLogo {
+      $imageSize: 3rem;
+
+      padding-right: calc(4rem + #{$imageSize});
+    }
+  }
+
+  ul {
+    margin: 0.25rem;
+  }
+
+  .duration {
+    color: $grey;
+    font-size: $size-7;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .noDuration {
+    padding-top: $size-7;
+  }
+
+  .title {
+    font-size: $size-5;
+    font-family: $font-title;
+    line-height: $size-4;
+    font-weight: bold;
+
+    &.hasBackground {
+      padding-left: 0.5rem;
+      border-radius: 4px;
+      color: $pico-bg !important;
+    }
+  }
+
+  .location {
+    color: $grey;
+    font-size: $size-6;
+    line-height: $size-6;
+
+    // Override emoji size.
+    & :global img {
+      width: $size-6 !important;
+      height: $size-6 !important;
+    }
+  }
+
+  .divider {
+    height: 0.5rem;
+  }
+
+  .links {
+    position: absolute;
+    bottom: 0.75rem;
+
+    padding: 0.25rem;
+  }
+
+  .logo {
+    $imageSize: 2.25rem;
+
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+
+    width: calc(2 * 1rem + #{$imageSize});
+    height: calc(2 * 1rem + #{$imageSize});
+    padding: 0.75rem;
+
+    border-radius: 50%;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+}
+
+.emoji {
+  position: relative;
+
+  width: $size-4;
+  height: $size-4;
+}
+
+.footer {
+  transition: background-color 450ms ease, color 150ms ease;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 3rem 1.5rem 4rem;
+
+  text-align: center;
+
+  background-color: $white-ter;
+  color: $grey-dark;
+
+  .text {
+    @include text-style();
+  }
+}
+
+.hero {
+  transition: background-color 450ms ease, color 150ms ease;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  min-height: 75vh;
+  margin-bottom: 5rem;
+  padding-top: 15vh;
+  padding-bottom: 2rem;
+
+  background-color: $pico-bg;
+
+  text-align: left;
+
+  @include mobile {
+    // Extra padding for header.
+    padding-top: 8rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .position {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0.75rem;
+
+    @include tablet-only {
+      margin-left: 16%;
+      width: 66%;
+    }
+
+    @include desktop {
+      margin-left: 38%;
+      width: unquote("min(41%, 830px)");
+    }
+  }
+
+  // Make this align at flex-end so DarkModeToggle is on the right.
+  .column {
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  .title {
+    transition: color 150ms ease;
+
+    margin: $size-6 0;
+
+    font-family: $font-title;
+    font-size: $size-1;
+    line-height: $size-title;
+    font-weight: bold;
+
+    color: $pico-title;
+
+    @include mobile {
+      font-size: $size-3;
+      line-height: $size-1;
+    }
+  }
+
+  .attrs {
+    @include text-style();
+
+    font-weight: bold;
+  }
+
+  .linkDJI {
+    @include link-style($dji, ($size-3 * 0.1));
+
+    font-weight: bold;
+
+    color: $dji;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .text {
+    @include text-style();
+
+    & b {
+      transition: color 150ms ease;
+      color: $grey-dark;
+    }
+  }
+
+  .seeBelow {
+    @include desktop {
+      display: none;
+    }
+  }
+}
+
+.icon {
+  transition: transform 150ms ease-in, color 150ms ease, opacity 200ms ease-in;
+  position: relative;
+
+  width: $size-4;
+  height: $size-4;
+
+  font-size: $size-4;
+  font-weight: normal;
+  color: $accent;
+
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+    color: $pico-title;
+  }
+}
+
+.row {
+  display: flex;
+  align-items: center;
+
+  &.spacingSmall {
+    & > *:not(:first-child) {
+      margin-left: 0.5rem;
+    }
+
+    & > *:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &.spacingNormal {
+    & > *:not(:first-child) {
+      margin-left: 1rem;
+    }
+
+    & > *:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+}
+
+.link {
+  @include text-style();
+
+  transition: color 150ms ease;
+
+  font-weight: bold;
+
+  text-decoration: none;
+  color: $accent;
+
+  &:not(.plain) {
+    @include link-style($accent, ($size-6 * 0.15));
+
+    margin-bottom: 0.375rem;
+  }
+
+  &:not(.disabled) {
+    cursor: pointer;
+  }
+
+  .disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+
+    color: $grey-light;
+  }
+}
+
+.main {
+  position: relative;
+  width: 100%;
+
+  @include tablet-only {
+    margin-left: 25%;
+    width: 68%;
+  }
+
+  @include desktop {
+    margin-left: 38%;
+    width: unquote("min(50%, 890px)");
+  }
+}
+
+.columns {
+  min-height: 100vh;
+}
+
+.section {
+  position: relative;
+  padding-top: 0.5rem;
+  padding-bottom: 3rem;
+
+  @include mobile {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  & > .title {
+    transition: color 150ms ease;
+
+    margin: $size-6 0;
+    margin-bottom: 2rem;
+
+    font-family: $font-title;
+    font-size: $size-3;
+    font-weight: bold;
+
+    color: $grey-dark;
+  }
+}
+
+.imageCard {
+  $borderRadius: 0.5rem;
+
+  position: absolute;
+  right: 100%;
+
+  width: 100%;
+  height: auto;
+  max-width: 12vw;
+  max-height: 40vh;
+  margin-right: 1.5rem;
+
+  @include mobile {
+    display: none;
+  }
+
+  & img {
+    transition: box-shadow 200ms ease, transform .3s cubic-bezier(.2,0,.2,1) !important;
+
+    width: 100%;
+    height: 100%;
+    border-radius: $borderRadius;
+
+    @include shadow-6dp();
+
+    &:hover {
+      @include shadow-8dp();
+    }
   }
 }
