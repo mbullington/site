@@ -43,7 +43,8 @@ module.exports = function(config) {
   config.addWatchTarget("./src/");
   config.addWatchTarget("./images/");
 
-  compileSCSS(config, './src/styles/*.scss', './_site/styles')
+  compileSCSS(config, './src/styles/global.scss', './_site/styles')
+  compileSCSS(config, './src/styles/home.scss', './_site/styles')
 
   config.addPlugin(pluginJSX);
   config.addTransform('typeset', pluginTypeset({
