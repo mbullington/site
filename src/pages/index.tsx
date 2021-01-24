@@ -110,13 +110,11 @@ export default function Index() {
               title="Interval"
               links={() => (
                 <>
-                  <a
+                  <Link
                     href="https://play.google.com/store/apps/details?id=xyz.bullington.interval"
-                    target="_blank"
                   >
-                    <img src="/images/google-play.png" />
-                  </a>
-                  
+                    Google Play (TM)
+                  </Link>
                 </>
               )}
               style={{ minHeight: "40vh" }}
@@ -160,7 +158,7 @@ export default function Index() {
             </Card>
             <Card
               title="node_preamble.dart"
-              duration="2019"
+              duration="2015 — 2019"
               links={() => (
                 <a
                   href="https://github.com/mbullington/node_preamble.dart"

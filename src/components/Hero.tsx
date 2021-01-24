@@ -28,7 +28,7 @@ export default function Hero() {
           I'm a multidisciplinary software developer with over 5 years of part-time industry experience. I'm a developing designer and aspiring product manager. Presently, I'm focused on finishing my undergraduate degree.
           <br/><br />Most recently, I worked at <a className={"linkDJI"}>DJI</a> as a Product Manager and Front-End Web Developer focusing on NA Public Safety. Areas of expertise include client-side <b>JavaScript</b>, web mapping technologies like <b>Mapbox</b>, and <b>Flutter</b>. On this site, you'll find projects I've worked on both professionally and independently.
           <br /><br />
-          To work with me, please reach out at <Link href="mailto:hello@bullington.xyz">hello@bullington.xyz</Link>. Visitors to the site, please also check out the <Link href="#sitemap">Sitemap</Link>!
+          I am currently seeking a career post-graduation (May 2021) and would love to talk about roles and fit. To work with me, please reach out at <Link href="mailto:hello@bullington.xyz">hello@bullington.xyz</Link>.
         </p>
 
         <Socials />
