@@ -16,7 +16,6 @@ export default function(props: Eleventy) {
             <>
                 <Helmet>
                     <link rel="stylesheet" href="static/fonts/Webfonts/fonts.css" />
-                    <link rel="stylesheet" href="styles/global.css" />
                     <link rel="stylesheet" href="styles/home.css" />
                     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" />
                 </Helmet>

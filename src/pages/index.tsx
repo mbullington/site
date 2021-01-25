@@ -111,9 +111,14 @@ export default function Index() {
               links={() => (
                 <>
                   <Link
+                    href="https://app.airport.community/app/recujaFKi0p2CaKue"
+                  >
+                    TestFlight via Airport (v2)
+                  </Link>
+                  <Link
                     href="https://play.google.com/store/apps/details?id=xyz.bullington.interval"
                   >
-                    Google Play (TM)
+                    Google Play (v1)
                   </Link>
                 </>
               )}
@@ -217,8 +222,8 @@ export default function Index() {
               The sitemap contains links to other places on the site and affiliates. Some of these are unmaintained but linked for posterity.
             </p>
             <a href="https://bullington.xyz" target="_blank" className="sitemap disabled">Home</a>
-            <a href="https://www.producthunt.com/upcoming/interval-2-0" target="_blank" className="sitemap">Interval 2.0</a>
             <a href="https://geojson.dev" target="_blank" className="sitemap">geojson.dev</a>
+            <a href="https://app.airport.community/app/recs0ADItsvb8zRPB" target="_blank" className="sitemap disabled">Expression</a>
             <a href="https://disks.bullington.xyz" target="_blank" className="sitemap disabled">DISKS</a>
         </Section>
       </Main>
