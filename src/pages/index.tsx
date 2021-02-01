@@ -51,8 +51,6 @@ export default function Index() {
             title="DJI Research LLC."
             titleBackground={"dji"}
             duration="May 2019 — Jan 2021"
-            logo={() => <Markup html={images.dji_logo} />}
-            logoBackground="var(--dji)"
           >
             <p>
               I worked at <Link href="https://enterprise.dji.com">DJI Research</Link> both full-time and during college as a Front-End Web Engineering Intern. Along with this role, I also held project-specific titles of Product Manager, Compliance Lead, and Interim Tech Lead.
@@ -71,8 +69,6 @@ export default function Index() {
             title="Wolfram Research Inc."
             titleBackground={"wolfram"}
             duration="May 2018 — May 2019"
-            logo={() => <Markup html={images.wolfram_logo} />}
-            logoBackground="var(--wolfram)"
           >
             <p>
             I worked as a summer intern on the <Link href="https://www.wolfram.com/cloud/">Wolfram Cloud</Link> team, which continued part-time during college to Q2 2019.
@@ -87,8 +83,6 @@ export default function Index() {
             title="DGLogik Inc."
             titleBackground={"dglogik"}
             duration="April 2015 — May 2018"
-            logo={() => <Markup html={images.dglogik_logo} />}
-            logoBackground="var(--dglogik)"
           >
             <p>
               I started work part-time at <Link href="https://www.dglogik.com/">DGLogik</Link> as an IoT Software Engineer and continued throughout high school and early college. During my time at DGLogik, I worked on specialized IoT solutions for customers like Cisco, IBM, and Apple. 
