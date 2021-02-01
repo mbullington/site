@@ -217,9 +217,11 @@ export default function Index() {
             </Card>
           </TwoCards>
         </Section>
-        <Section title="Sitemap" id="sitemap">
+        <Section title="Meta" id="meta">
             <p className={"sitemapText"}>
-              The sitemap contains links to other places on the site and affiliates. Some of these are unmaintained but linked for posterity.
+              This site was built using <Link href="https://www.11ty.dev/">Eleventy</Link> and React (server side only). My images and writing are <b>All rights reserved.</b> The code for my site is licensed MIT, and available <Link href="https://github.com/mbullington/site">on GitHub.</Link>
+              <br /><br />
+              Here's a sitemap to places on my domain and affiliate sites:
             </p>
             <a href="https://bullington.xyz" target="_blank" className="sitemap disabled">Home</a>
             <a href="https://geojson.dev" target="_blank" className="sitemap">geojson.dev</a>
