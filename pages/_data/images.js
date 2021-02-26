@@ -3,16 +3,18 @@ const Image = require("@11ty/eleventy-img");
 
 const IMAGE_WIDTHS = [64, 96, 128, 192, 256, 512, 768, null];
 
-async function loadImage(src, alt, sizesPercentage = 1.0) {
+async function loadImage(src, alt, sizesPercentage = 1.0, needsTransparency = false) {
+  const lastResortFormat = needsTransparency ? "png" : "jpeg"
+
   const metadata = await Image(src, {
     widths: IMAGE_WIDTHS,
     outputDir: "./_site/img/",
-    formats: ["webp", "avif", "jpeg"],
+    formats: ["webp", "avif", lastResortFormat],
   });
 
   // https://www.11ty.dev/docs/plugins/image/#use-this-in-your-templates
-  const lowsrc = metadata.jpeg[0];
-  const highsrc = metadata.jpeg[metadata.jpeg.length - 1];
+  const lowsrc = metadata[lastResortFormat][0];
+  const highsrc = metadata[lastResortFormat][metadata[lastResortFormat].length - 1];
 
   return `<picture>
     ${Object.values(metadata)
@@ -56,21 +58,29 @@ module.exports = async function () {
       "HackPSU",
       SCREENSHOT_IMG
     ),
+    wolfram_screenshot: await loadImage(
+      "./images/wolfram_screenshot.jpg",
+      "DynamicGeoGraphics",
+      SCREENSHOT_IMG
+    ),
     // Logos.
     dji_logo: await loadImage(
       "./images/dji_logo.png",
       "DJI",
-      LOGO_IMG
+      LOGO_IMG,
+      true,
     ),
     wolfram_logo: await loadImage(
       "./images/wolfram_logo.png",
       "Wolfram",
-      LOGO_IMG
+      LOGO_IMG,
+      true,
     ),
     dglogik_logo: await loadImage(
       "./images/dglogik_logo.png",
       "DGLogik",
-      LOGO_IMG
+      LOGO_IMG,
+      true,
     ),
   };
 };

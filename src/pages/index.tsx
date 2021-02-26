@@ -1,5 +1,4 @@
 import * as React from "react";
-import cx from "clsx";
 
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
@@ -12,9 +11,9 @@ import Link from "../components/Link";
 import { FA } from "../components/Icon";
 import ImageCard from "../components/ImageCard";
 import SEO from "../components/SEO";
+import Markup from "../components/Markup";
 
 import useEleventy from "../components/useEleventy"
-import Markup from "../components/Markup";
 
 interface Props {
   children: React.ReactNode;
@@ -51,6 +50,8 @@ export default function Index() {
             title="DJI Research LLC."
             titleBackground={"dji"}
             duration="May 2019 — Jan 2021"
+            logo={() => <Markup html={images.dji_logo} />}
+            logoBackground="var(--dji)"
           >
             <p>
               I worked at <Link href="https://enterprise.dji.com">DJI Research</Link> both full-time and during college as a Front-End Web Engineering Intern. Along with this role, I also held project-specific titles of Product Manager, Compliance Lead, and Interim Tech Lead.
@@ -65,24 +66,31 @@ export default function Index() {
             </p>
           </Card>
 
-          <Card
-            title="Wolfram Research Inc."
-            titleBackground={"wolfram"}
-            duration="May 2018 — May 2019"
-          >
-            <p>
-            I worked as a summer intern on the <Link href="https://www.wolfram.com/cloud/">Wolfram Cloud</Link> team, which continued part-time during college to Q2 2019.
-            <br /><br />
-            My main project was overhauling the typesetting engine to improve aesthetic and accuracy. The "new" look was inspired by metrics from LaTeX and Wolfram Player for iOS. I wrote about algorithms I developed in <Link href="https://medium.com/wolfram-developers/modernizing-math-typesetting-with-svg-8d82ca606b9a">{'Modernizing Math Typesetting with SVG'}</Link>.
-            <br /><br />
-            I also created a clean-room implementation of <Link href="https://reference.wolfram.com/language/ref/DynamicGeoGraphics.html">DynamicGeoGraphics</Link> on the web using Leaflet. <code>DynamicGeoGraphics</code> is a data-driven component which supports arbitrary polygons, geographic projections, and "markers" that interact with the DOM.
-            </p>
-          </Card>
+          <div className={"imageCardContainer"}>
+            <ImageCard html={images.wolfram_screenshot} />
+            <Card
+              title="Wolfram Research Inc."
+              titleBackground={"wolfram"}
+              duration="May 2018 — May 2019"
+              logo={() => <Markup html={images.wolfram_logo} />}
+              logoBackground="var(--wolfram)"
+            >
+              <p>
+              I worked as a summer intern on the <Link href="https://www.wolfram.com/cloud/">Wolfram Cloud</Link> team, which continued part-time during college to Q2 2019.
+              <br /><br />
+              My main project was overhauling the typesetting engine to improve aesthetic and accuracy. The "new" look was inspired by metrics from LaTeX and Wolfram Player for iOS. I wrote about algorithms I developed in <Link href="https://medium.com/wolfram-developers/modernizing-math-typesetting-with-svg-8d82ca606b9a">{'Modernizing Math Typesetting with SVG'}</Link>.
+              <br /><br />
+              I also created a clean-room implementation of <Link href="https://reference.wolfram.com/language/ref/DynamicGeoGraphics.html">DynamicGeoGraphics</Link> on the web using Leaflet. <code>DynamicGeoGraphics</code> is a data-driven component which supports arbitrary polygons, geographic projections, and "markers" that interact with the DOM.
+              </p>
+            </Card>
+          </div>
 
           <Card
             title="DGLogik Inc."
             titleBackground={"dglogik"}
             duration="April 2015 — May 2018"
+            logo={() => <Markup html={images.dglogik_logo} />}
+            logoBackground="var(--dglogik)"
           >
             <p>
               I started work part-time at <Link href="https://www.dglogik.com/">DGLogik</Link> as an IoT Software Engineer and continued throughout high school and early college. During my time at DGLogik, I worked on specialized IoT solutions for customers like Cisco, IBM, and Apple. 
@@ -91,7 +99,7 @@ export default function Index() {
               <br /><br />
               In 2016 DGLogik Inc. was acquired by Acuity Brands, where I was re-hired as a part-time Software Engineer.
               <br /><br />
-              In this time, I made significant contributions to <Link href="https://www.dglogik.com/products/dglux-for-dsa">DGLux5</Link>, a low-code environment for creating IoT dashboards. "Owned" features for web include technologies such as Mapbox, D3, and THREE.js. Most of these features were created for <Link href="https://www.acuitybrands.com/products/detail/775921/atrius/atrius-insights/atrius-insights-spatial-analytics-platform-service-and-web-application">Atrius Insights</Link>.
+              In this time, I made significant contributions to <Link href="https://www.dglogik.com/products/dglux-for-dsa">DGLux5</Link>, a low-code environment for creating IoT dashboards. "Owned" features for web include DGLux views using Mapbox, D3, and THREE.js. Most of these features were created for <Link href="https://www.acuitybrands.com/products/detail/775921/atrius/atrius-insights/atrius-insights-spatial-analytics-platform-service-and-web-application">Atrius Insights</Link>.
             </p>
           </Card>
         </Section>
@@ -219,6 +227,7 @@ export default function Index() {
             </p>
             <a href="https://bullington.xyz" target="_blank" className="sitemap disabled">Home</a>
             <a href="https://geojson.dev" target="_blank" className="sitemap">geojson.dev</a>
+            <a href="https://github.com/bloomos" target="_blank" className="sitemap">Bloom OS</a>
             <a href="https://app.airport.community/app/recs0ADItsvb8zRPB" target="_blank" className="sitemap disabled">Expression</a>
             <a href="https://disks.bullington.xyz" target="_blank" className="sitemap disabled">DISKS</a>
         </Section>
