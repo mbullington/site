@@ -11,6 +11,7 @@ interface Props {
   title?: string;
   titleBackground?: string;
   logo?: LinksCallback;
+  logoBorderless?: boolean;
   logoBackground?: string;
   location?: string;
   children?: React.ReactNode;
@@ -23,13 +24,14 @@ export default function Card({
   title,
   titleBackground,
   logo,
+  logoBorderless,
   logoBackground,
   location,
   children,
   links,
   style,
 }: Props) {
-  const hasLogo = !!logo && !!logoBackground;
+  const hasLogo = !!logo;
   const hasBackground = !!titleBackground;
   const hasLinks = !!links;
 
@@ -41,6 +43,10 @@ export default function Card({
   const titleClasses = cx("title", {
     ["hasBackground"]: hasBackground,
   });
+
+  const logoClasses = cx("logo", {
+    'logo-borderless': logoBorderless,
+  })
 
   return (
     <div className={cardClasses} style={style}>
@@ -76,7 +82,7 @@ export default function Card({
       )}
       {logo && (
         <div
-          className={"logo"}
+          className={logoClasses}
           style={{ backgroundColor: logoBackground }}
         >
           {logo()}

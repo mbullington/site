@@ -186,7 +186,6 @@ ul > li {
 
     width: calc(2 * 1rem + #{$imageSize});
     height: calc(2 * 1rem + #{$imageSize});
-    padding: 0.75rem;
 
     border-radius: 50%;
 
@@ -197,6 +196,14 @@ ul > li {
 
     @include mobile {
       display: none;
+    }
+
+    &:not(.logo-borderless) {
+      padding: 0.75rem;
+    }
+
+    &.logo-borderless img {
+      border-radius: 50%;
     }
   }
 }

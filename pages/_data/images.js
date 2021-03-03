@@ -82,5 +82,12 @@ module.exports = async function () {
       LOGO_IMG,
       true,
     ),
+    interval_logo: await loadImage(
+      "./images/interval_logo.png",
+      "Interval",
+      // Double 'resolution' (picture ratio) so it looks nicer.
+      LOGO_IMG * 2,
+      true,
+    ),
   };
 };

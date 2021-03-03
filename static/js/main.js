@@ -24,4 +24,15 @@ window.onload = () => {
         // The same as 8rem.
         margin: 128,
     });
+
+    // Show more.
+    const showMore = document.querySelector(".showMore")
+    const showMoreContainer = document.querySelector(".showMore--container")
+
+    if (showMore && showMoreContainer) {
+        showMore.addEventListener('click', () => {
+            showMore.classList.add("showMore-hidden")
+            showMoreContainer.classList.remove("showMore--container-hidden")
+        })
+    }
 }
