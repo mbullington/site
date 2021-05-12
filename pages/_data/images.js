@@ -89,5 +89,12 @@ module.exports = async function () {
       LOGO_IMG * 2,
       true,
     ),
+    bloom_logo: await loadImage(
+      "./images/bloom_logo.png",
+      "Bloom OS",
+      // Double 'resolution' (picture ratio) so it looks nicer.
+      LOGO_IMG * 2,
+      true,
+    ),
   };
 };

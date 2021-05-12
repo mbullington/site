@@ -30,11 +30,12 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
-  font-size: 17px;
+  font-size: 18px;
 }
 
 body {
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 // strange issue with Bulma
@@ -99,7 +100,7 @@ ul > li {
 
 .card {
   position: relative;
-  transition: all 450ms ease;
+  transition: all 200ms ease-in-out;
 
   min-height: 260px;
   margin-top: 1rem;
@@ -111,6 +112,14 @@ ul > li {
   border-radius: 0.5rem;
 
   color: $black-bis;
+
+  &:hover {
+    background-color: lighten($pico-bg, 1%);
+  }
+
+  &:active {
+    background-color: darken($pico-bg, 1%);
+  }
 
   @include text-style();
 
@@ -216,7 +225,7 @@ ul > li {
 }
 
 .footer {
-  transition: background-color 450ms ease, color 150ms ease;
+  transition: background-color 200ms ease-in-out;
 
   display: flex;
   flex-direction: column;
@@ -227,8 +236,16 @@ ul > li {
 
   text-align: center;
 
-  background-color: $white-ter;
+  background-color: $pico-bg;
   color: $grey-dark;
+
+  &:hover {
+    background-color: lighten($pico-bg, 1%);
+  }
+
+  &:active {
+    background-color: darken($pico-bg, 1%);
+  }
 
   .text {
     @include text-style();
@@ -236,7 +253,7 @@ ul > li {
 }
 
 .hero {
-  transition: background-color 450ms ease, color 150ms ease;
+  transition: background-color 200ms ease-in-out;
 
   display: flex;
   flex-direction: row;
@@ -250,6 +267,14 @@ ul > li {
   background-color: $pico-bg;
 
   text-align: left;
+
+  &:hover {
+    background-color: lighten($pico-bg, 1%);
+  }
+
+  &:active {
+    background-color: darken($pico-bg, 1%);
+  }
 
   @include mobile {
     // Extra padding for header.
