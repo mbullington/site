@@ -214,8 +214,7 @@ export default function Index() {
               design, Interval makes it super simple to go from ‘
               <i>I want to work</i>’ to ‘<i>work is in my timecard.</i>’
               Features that help with this include a <strong>Timer</strong>,{" "}
-              <strong>History</strong> tab to manually add entries (
-              <i>shown right on desktop</i>), and <strong>CSV Export</strong>.
+              <strong>History</strong> tab to manually add entries, and <strong>CSV Export</strong>.
               <br />
               <br />
               Interval is built entirely with <strong>Flutter</strong>.
