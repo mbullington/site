@@ -31,7 +31,7 @@
     "eleventy-plugin-jsx": "^0.3.2",
     "eleventy-plugin-typeset": "^1.0.0",
     "fs-extra": "^9.1.0",
-    "postcss": "^8.2.4",
+    "postcss": "^8.2.10",
     "sass": "^1.32.5",
     "typescript": "^3.5.3"
   }
