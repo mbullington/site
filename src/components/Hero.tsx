@@ -22,13 +22,24 @@ export default function Hero() {
           <Emoji emoji="🇺🇸" />
           <span>PSU '21</span>
           <Emoji emoji="🎓" />
-          <span>last updated 3.3.21</span>
+          <span>last updated 5.12.21</span>
         </InlineRow>
         <p className="text">
-          I'm a multidisciplinary software developer with over 5 years of part-time industry experience. I'm a developing designer and aspiring product manager. Most recently, I worked at <a className={"linkDJI"}>DJI</a> as a Product Manager and Front-End Web Developer focusing on NA Public Safety.
-          <br/><br />Presently, I'm focused on finishing my undergraduate degree. Areas of expertise include client-side <b>JavaScript</b>, web mapping technologies like <b>Mapbox</b>, and <b>Flutter</b>. On this site, you'll find projects I've worked on both professionally and independently.
-          <br /><br />
-          Feel free to look around the site! If you have any inquiries, please reach out at <Link href="mailto:hello@bullington.xyz">hello@bullington.xyz</Link>.
+          I'm a multidisciplinary software developer and aspiring designer.
+          Most recently, I worked at <a className={"linkDJI"}>DJI</a> focusing on NA Public
+          Safety and Web Services.
+          <br />
+          <br />
+          I'm excited to soon be starting a new position as a Senior Front-End
+          Engineer. Areas of expertise include web mapping technologies like{" "}
+          <b>Mapbox</b>, client-side <b>JavaScript</b>, and <b>Flutter</b>. On
+          this site, you'll find projects I've worked on both professionally and
+          independently.
+          <br />
+          <br />
+          Feel free to look around the site! If you have any inquiries, please
+          reach out at{" "}
+          <Link href="mailto:hello@bullington.xyz">hello@bullington.xyz</Link>.
         </p>
 
         <Socials />
