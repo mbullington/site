@@ -214,7 +214,8 @@ export default function Index() {
               design, Interval makes it super simple to go from ‘
               <i>I want to work</i>’ to ‘<i>work is in my timecard.</i>’
               Features that help with this include a <strong>Timer</strong>,{" "}
-              <strong>History</strong> tab to manually add entries, and <strong>CSV Export</strong>.
+              <strong>History</strong> tab to manually add entries, and{" "}
+              <strong>CSV Export</strong>.
               <br />
               <br />
               Interval is built entirely with <strong>Flutter</strong>.
@@ -295,15 +296,16 @@ export default function Index() {
                   >
                     <FA icon={faGithub} />
                   </a>
-                  <Link href="/static/GeospatialWASM.pdf">Undergraduate Thesis</Link>
+                  <Link href="/static/GeospatialWASM.pdf">
+                    Undergraduate Thesis
+                  </Link>
                 </>
               )}
             >
-              I rewrote part of{" "}
-              <Link href="http://turfjs.org/">TURF.js</Link>, a popular
-              JavaScript geospatial library, in C++ with Emscripten so I could
-              compare performance characteristics. Ultimately, it's only useful
-              if you're only targeting Safari.
+              I rewrote part of <Link href="http://turfjs.org/">TURF.js</Link>,
+              a popular JavaScript geospatial library, in C++ with Emscripten so
+              I could compare performance characteristics. Ultimately, it's only
+              useful if you're only targeting Safari.
               <br />
               <br />
               Hopefully as WASM performance improves, Astro will be more viable
@@ -323,25 +325,6 @@ export default function Index() {
               </div>
             </Card> */}
           </TwoCards>
-        </Section>
-        <Section title="Meta" id="meta">
-          <p className={"sitemapText"}>
-            This site was built using{" "}
-            <Link href="https://www.11ty.dev/">Eleventy</Link> and React (server
-            side only). My images and writing are <b>All rights reserved.</b>{" "}
-            The code for my site is licensed MIT, and available{" "}
-            <Link href="https://github.com/mbullington/site">on GitHub.</Link>
-            <br />
-            <br />
-            Here's a sitemap to places on my domain and affiliate sites:
-          </p>
-          <a
-            href="https://bullington.xyz"
-            target="_blank"
-            className="sitemap disabled"
-          >
-            Home
-          </a>
           <a href="https://geojson.dev" target="_blank" className="sitemap">
             geojson.dev
           </a>
@@ -366,6 +349,15 @@ export default function Index() {
           >
             DISKS
           </a>
+        </Section>
+        <Section title="Meta" id="meta">
+          <p className={"sitemapText"}>
+            This site was built using{" "}
+            <Link href="https://www.11ty.dev/">Eleventy</Link> and React (server
+            side only). My images and writing are <b>All rights reserved.</b>{" "}
+            The code for my site is licensed MIT, and available{" "}
+            <Link href="https://github.com/mbullington/site">on GitHub.</Link>
+          </p>
         </Section>
       </Main>
     </Layout>
