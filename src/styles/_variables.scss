@@ -3,37 +3,40 @@
 
 // Colors
 
-$black:        hsl(0, 0%, 4%);
-$black-bis:    hsl(0, 0%, 7%);
-$black-ter:    hsl(0, 0%, 14%);
+$black: hsl(0, 0%, 4%);
+$black-bis: hsl(0, 0%, 7%);
+$black-ter: hsl(0, 0%, 14%);
 
-$grey-darker:  hsl(0, 0%, 21%);
-$grey-dark:    hsl(0, 0%, 29%);
-$grey:         hsl(0, 0%, 48%);
-$grey-light:   hsl(0, 0%, 71%);
+$grey-darker: hsl(0, 0%, 21%);
+$grey-dark: hsl(0, 0%, 29%);
+$grey: hsl(0, 0%, 48%);
+$grey-light: hsl(0, 0%, 71%);
 $grey-lighter: hsl(0, 0%, 86%);
 
-$white-ter:    hsl(0, 0%, 96%);
-$white-bis:    hsl(0, 0%, 98%);
-$white:        hsl(0, 0%, 100%);
+$white-ter: hsl(0, 0%, 96%);
+$white-bis: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
 
 // Pico-8 colors ;)
-$accent: #065AB5;
-$accent-light: #29ADFF;
+$accent: #065ab5;
+$accent-light: #29adff;
 $pico-bg: whitesmoke;
 $pico-title: #125359;
 
-$dji: rgb(31,150,244);
+$mapbox: #4264fb;
+$dji: rgb(31, 150, 244);
 $wolfram: rgb(235, 47, 42);
-$dglogik: rgb(0,189,255);
+$dglogik: rgb(0, 189, 255);
 
 $br: rgba(219, 219, 219, 0.5);
 
 // Typography
 
 // https://markdotto.com/2018/02/07/github-system-fonts/
-$font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$font-monospace: "iA Writer Duospace", San Francisco Mono, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+$font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-monospace: "iA Writer Duospace", San Francisco Mono, Menlo, Consolas,
+  Monaco, Liberation Mono, Lucida Console, monospace;
 
 $font-title: $font-monospace;
 $font-text: "Lato", $font-system;

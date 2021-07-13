@@ -22,19 +22,20 @@ export default function Hero() {
           <Emoji emoji="🇺🇸" />
           <span>PSU '21</span>
           <Emoji emoji="🎓" />
-          <span>last updated 5.12.21</span>
+          <span>last updated 7.12.21</span>
         </InlineRow>
         <p className="text">
-          I'm a multidisciplinary software developer and aspiring designer.
-          Most recently, I worked at <a className={"linkDJI"}>DJI</a> focusing on NA Public
-          Safety and Web Services.
+          I'm a software developer who's passionate about building user
+          interfaces. I currently work on{" "}
+          <a className={"linkMapbox"}>Mapbox Studio</a>. Most recently, I worked
+          at <a className={"linkDJI"}>DJI</a> focusing on NA Public Safety and
+          Web Services.
           <br />
           <br />
-          I'm excited to soon be starting a new position as a Senior Front-End
-          Engineer. Areas of expertise include web mapping technologies like{" "}
-          <b>Mapbox</b>, client-side <b>JavaScript</b>, and <b>Flutter</b>. On
-          this site, you'll find projects I've worked on both professionally and
-          independently.
+          Areas of expertise include web mapping technologies like <b>Mapbox</b>
+          , client-side <b>JavaScript</b>, and <b>Flutter</b>. On this site,
+          you'll find projects I've worked on both professionally and
+          independently. I live in Washington, D.C.
           <br />
           <br />
           Feel free to look around the site! If you have any inquiries, please

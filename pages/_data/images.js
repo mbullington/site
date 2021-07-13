@@ -3,8 +3,13 @@ const Image = require("@11ty/eleventy-img");
 
 const IMAGE_WIDTHS = [64, 96, 128, 192, 256, 512, 768, null];
 
-async function loadImage(src, alt, sizesPercentage = 1.0, needsTransparency = false) {
-  const lastResortFormat = needsTransparency ? "png" : "jpeg"
+async function loadImage(
+  src,
+  alt,
+  sizesPercentage = 1.0,
+  needsTransparency = false
+) {
+  const lastResortFormat = needsTransparency ? "png" : "jpeg";
 
   const metadata = await Image(src, {
     widths: IMAGE_WIDTHS,
@@ -14,15 +19,26 @@ async function loadImage(src, alt, sizesPercentage = 1.0, needsTransparency = fa
 
   // https://www.11ty.dev/docs/plugins/image/#use-this-in-your-templates
   const lowsrc = metadata[lastResortFormat][0];
-  const highsrc = metadata[lastResortFormat][metadata[lastResortFormat].length - 1];
+  const highsrc =
+    metadata[lastResortFormat][metadata[lastResortFormat].length - 1];
 
   return `<picture>
     ${Object.values(metadata)
       .map((imageFormat) => {
-        const sizes = imageFormat.map((entry) => `(max-width: ${Math.ceil(entry.width / sizesPercentage)}px) ${entry.width}px`).join(", ") + `, ${highsrc.width}px`
+        const sizes =
+          imageFormat
+            .map(
+              (entry) =>
+                `(max-width: ${Math.ceil(entry.width / sizesPercentage)}px) ${
+                  entry.width
+                }px`
+            )
+            .join(", ") + `, ${highsrc.width}px`;
         return `<source type="${
           imageFormat[0].sourceType
-        }" srcset="${imageFormat.map((entry) => entry.srcset).join(", ")}" sizes="${sizes}">`;
+        }" srcset="${imageFormat
+          .map((entry) => entry.srcset)
+          .join(", ")}" sizes="${sizes}">`;
       })
       .join("\n")}
       <img
@@ -30,15 +46,15 @@ async function loadImage(src, alt, sizesPercentage = 1.0, needsTransparency = fa
         alt="${alt}"
         width="${lowsrc.width}"
         height="${lowsrc.height}"
-        ${/* Add high-res version needed for medium-zoom */ ''}
+        ${/* Add high-res version needed for medium-zoom */ ""}
         data-zoom-src="${highsrc.url}">
     </picture>`;
 }
 
 // Sidebar images should only take up 1/3 of screen
-const SCREENSHOT_IMG = 0.33
+const SCREENSHOT_IMG = 0.33;
 // Logo images should only take up a super-small part of screen
-const LOGO_IMG = 0.2
+const LOGO_IMG = 0.2;
 
 module.exports = async function () {
   return {
@@ -64,37 +80,38 @@ module.exports = async function () {
       SCREENSHOT_IMG
     ),
     // Logos.
-    dji_logo: await loadImage(
-      "./images/dji_logo.png",
-      "DJI",
+    mapbox_logo: await loadImage(
+      "./images/mapbox_logo.png",
+      "Mapbox",
       LOGO_IMG,
-      true,
+      true
     ),
+    dji_logo: await loadImage("./images/dji_logo.png", "DJI", LOGO_IMG, true),
     wolfram_logo: await loadImage(
       "./images/wolfram_logo.png",
       "Wolfram",
       LOGO_IMG,
-      true,
+      true
     ),
     dglogik_logo: await loadImage(
       "./images/dglogik_logo.png",
       "DGLogik",
       LOGO_IMG,
-      true,
+      true
     ),
     interval_logo: await loadImage(
       "./images/interval_logo.png",
       "Interval",
       // Double 'resolution' (picture ratio) so it looks nicer.
       LOGO_IMG * 2,
-      true,
+      true
     ),
     bloom_logo: await loadImage(
       "./images/bloom_logo.png",
       "Bloom OS",
       // Double 'resolution' (picture ratio) so it looks nicer.
       LOGO_IMG * 2,
-      true,
+      true
     ),
   };
 };

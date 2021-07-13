@@ -46,58 +46,80 @@ export default function Index() {
     <Layout>
       <Main>
         <Section title="Portfolio">
-          <ImageCard html={images.airworks_screenshot} />
           <Card
-            title="DJI Research LLC."
-            titleBackground={"dji"}
-            duration="May 2019 — Jan 2021"
-            logo={() => <Markup html={images.dji_logo} />}
-            logoBackground="var(--dji)"
+            title="Mapbox Inc."
+            titleBackground={"mapbox"}
+            duration="June 2021 — Present"
+            logo={() => <Markup html={images.mapbox_logo} />}
+            logoBorderless
+            links={() => (
+              <>
+                <Link href="https://studio.mapbox.com/">Mapbox Studio</Link>
+              </>
+            )}
           >
             <p>
-              I worked at{" "}
-              <Link href="https://enterprise.dji.com">DJI Research</Link> both
-              full-time and during college as a Front-End Web Engineering
-              Intern. Along with this role, I also held project-specific titles
-              of Product Manager, Compliance Lead, and Interim Tech Lead.
-              <br />
-              <br />
-              Starting in Q4 2020 my full-time role was{" "}
-              <strong>Product Manager</strong> focusing on Public Safety for the
-              US/Canada under{" "}
-              <Link href="https://www.dji.com/flysafe">DJI FlySafe</Link>. The
-              role included planning roadmap/releases for our 4-person team and
-              maintaining relationships with stakeholders. In place of a
-              dedicated <strong>product designer</strong>, I performed the role
-              as PM and created high-fidelity designs for all application flows
-              using Sketch.
-              <br />
-              <br />
-              As Compliance Lead, I initiated compliance with the{" "}
-              <strong>NIST 800-53 r4</strong> framework. This included authoring
-              over 70 controls, creating a proposal to stakeholders, and helping
-              the Tech Lead create compliant solutions.
-              <br />
-              <br />
-              As Interim Tech Lead from Q2 2019 to Q2 2020, I led front-end
-              development for DJI's{" "}
-              <Link href="https://www.faa.gov/uas/programs_partnerships/data_exchange/">
-                FAA LAANC
-              </Link>{" "}
-              service. This included collaborating in-person with technical
-              expertise from Palo Alto and Shenzhen to build a complex web
-              mapping product. The project required strict adherance to FAA
-              advisory rule sets.
-              <br />
-              <br />I was a foundational member for how the Palo Alto office
-              ("USPA") writes JavaScript. I created and open-sourced{" "}
-              <Link href="https://github.com/dji-dev/us-web">
-                dji-dev/us-web
-              </Link>{" "}
-              and contributed to <strong>Turf.js</strong> representing DJI.
-              Additionally, I worked on multiple projects such as DJI AirWorks.
+              I currently work as a Senior Front-End Engineer on the Map Design
+              team, with a focus on Mapbox Studio.
             </p>
           </Card>
+
+          <div style={{ display: "relative" }}>
+            <ImageCard html={images.airworks_screenshot} />
+            <Card
+              title="DJI Research LLC."
+              titleBackground={"dji"}
+              duration="May 2019 — Jan 2021"
+              logo={() => <Markup html={images.dji_logo} />}
+              logoBackground="var(--dji)"
+            >
+              <p>
+                I worked at{" "}
+                <Link href="https://enterprise.dji.com">DJI Research</Link> both
+                full-time and during college as a Front-End Web Engineering
+                Intern. Along with this role, I also held project-specific
+                titles of Product Manager, Compliance Lead, and Interim Tech
+                Lead.
+                <br />
+                <br />
+                Starting in Q4 2020 my full-time role was{" "}
+                <strong>Product Manager</strong> focusing on Public Safety for
+                the US/Canada under{" "}
+                <Link href="https://www.dji.com/flysafe">DJI FlySafe</Link>. The
+                role included planning roadmap/releases for our 4-person team
+                and maintaining relationships with stakeholders. In place of a
+                dedicated <strong>product designer</strong>, I performed the
+                role as PM and created high-fidelity designs for all application
+                flows using Sketch.
+                <br />
+                <br />
+                As Compliance Lead, I initiated compliance with the{" "}
+                <strong>NIST 800-53 r4</strong> framework. This included
+                authoring over 70 controls, creating a proposal to stakeholders,
+                and helping the Tech Lead create compliant solutions.
+                <br />
+                <br />
+                As Interim Tech Lead from Q2 2019 to Q2 2020, I led front-end
+                development for DJI's{" "}
+                <Link href="https://www.faa.gov/uas/programs_partnerships/data_exchange/">
+                  FAA LAANC
+                </Link>{" "}
+                service. This included collaborating in-person with technical
+                expertise from Palo Alto and Shenzhen to build a complex web
+                mapping product. The project required strict adherance to FAA
+                advisory rule sets.
+                <br />
+                <br />I was a foundational member for how the Palo Alto office
+                ("USPA") writes JavaScript. I created and open-sourced{" "}
+                <Link href="https://github.com/dji-dev/us-web">
+                  dji-dev/us-web
+                </Link>{" "}
+                and contributed to <strong>Turf.js</strong> representing DJI.
+                Additionally, I worked on multiple projects such as DJI
+                AirWorks.
+              </p>
+            </Card>
+          </div>
 
           <div className="showMore">
             <FA icon={faAngleDown} />
@@ -336,11 +358,11 @@ export default function Index() {
             Bloom OS
           </a>
           <a
-            href="https://app.airport.community/app/recs0ADItsvb8zRPB"
+            href="https://app.airport.community/app/rec3O0kfGGU1qv4Eb"
             target="_blank"
             className="sitemap"
           >
-            Expression
+            Twilight
           </a>
           <a
             href="https://disks.bullington.xyz"
